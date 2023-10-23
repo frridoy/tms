@@ -20,40 +20,27 @@
               <ul class="menu">
                 <!-- .menu-item -->
                 <li class="menu-item has-active">
-                  <a href="#" class="menu-link"><span class="menu-text">Dashboard</span></a>
+                  <a href="{{url('/')}}" class="menu-link"><span class="menu-text">Dashboard</span></a>
                 </li><!-- /.menu-item -->
                 <!-- .menu-item -->
                 <li class="menu-item has-child">
-                  <a href="#" class="menu-link"> <span class="menu-text">Tour Packages</span></a> <!-- child menu -->
-                  <ul class="menu">
-                    <li class="menu-item">
-                      <a href="page-clients.html" class="menu-link">Clients</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="page-teams.html" class="menu-link">Teams</a>
-                    </li>
-                    
-                     
-                   
-                  </ul><!-- /child menu -->
+                <a href="{{url('/tour-packages')}}" class="menu-link"> <span class="menu-text">Tour Packages</span></a> <!-- child menu -->
+                 
                 </li><!-- /.menu-item -->
                 <!-- .menu-item -->
                 <li class="menu-item has-child">
-                  <a href="#" class="menu-link"><span class=""></span> <span class="menu-text">Manage Users</span></a> <!-- child menu -->
-                  <ul class="menu">
-                  </ul><!-- /child menu -->
+                  <a href="{{url('/manage-users')}}" class="menu-link"><span class=""></span> <span class="menu-text">Manage Users</span></a> <!-- child menu -->
+                 
                 </li><!-- /.menu-item -->
                 <!-- .menu-item -->
                 <li class="menu-item has-child">
                   <a href="#" class="menu-link"><span class=""></span> <span class="menu-text">Manage Booking</span></a> <!-- child menu -->
-                  <ul class="menu">
-                  </ul><!-- /child menu -->
+                 
                 </li><!-- /.menu-item -->
                 <!-- .menu-item -->
                 <li class="menu-item has-child">
                   <a href="#" class="menu-link"><span class="menu-text">Manage Issues</span></a> <!-- child menu -->
-                  <ul class="menu">
-                  </ul><!-- /child menu -->
+               
                 </li><!-- /.menu-item -->
                 <!-- .menu-item -->
                 <li class="menu-item">
@@ -65,9 +52,7 @@
                 <!-- .menu-item -->
                 <li class="menu-item has-child">
                   <a href="#" class="menu-link"><span class="menu-text">Manage Pages</span></a> <!-- child menu -->
-                  <ul class="menu">
-                     
-                  </ul><!-- /child menu -->
+                
                 </li><!-- /.menu-item -->
                 <!-- .menu-item -->
                 
