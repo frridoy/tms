@@ -69,7 +69,7 @@
                   <!-- grid column -->
                   <div class="col-12 col-lg-12 col-xl-4">
                     <!-- .card -->
-                    
+
                   </div><!-- /grid column -->
                   <!-- grid column -->
                   <div class="col-12 col-lg-6 col-xl-4">
@@ -83,7 +83,7 @@
                 <!-- card-deck-xl -->
                 <div class="card-deck-xl">
                   <!-- .card -->
-                 
+
                   <!-- .card -->
                 </div><!-- /card-deck-xl -->
               </div><!-- /.page-section -->
