@@ -10,17 +10,15 @@ class UserController extends Controller
 {
     public function login()
     {
-        return view('admin.pages.admin');
+        return view('admin.pages.login');
     }
     public function loginPost(Request $request)
     {
-        $val = Validator::make(
-            $request->all(),
+        $val = Validator::make($request->all(),
             [
                 'email' => 'required|email',
-                'password' => 'required|min:6|max:8',
-            ]
-        );
+                'password' => 'required|min:4|max:10',
+            ]);
 
         if ($val->fails()) {
             //message
@@ -35,7 +33,7 @@ class UserController extends Controller
     }
     public function logout()
     {
-        auth()->logout;
+        auth()->logout();
         return redirect()->route('admin.login');
     }
 }

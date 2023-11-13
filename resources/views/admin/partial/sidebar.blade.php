@@ -157,9 +157,7 @@
                 </li><!-- /.menu-item -->
                 <!-- .menu-header -->
 
-                <li class="menu-item">
-                    <a href="" class="menu-link"> <span class="menu-text">Spot</span></a>
-                  </li>
+
 
                   <li class="menu-item">
                     <a href="" class="menu-link"> <span class="menu-text">Food</span></a>
