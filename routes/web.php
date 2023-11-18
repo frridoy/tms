@@ -2,32 +2,63 @@
 
 use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\HotelController;
-use App\Http\Controllers\LocationController;
-use App\Http\Controllers\ManageUsersController;
-use App\Http\Controllers\TourPackagesController;
-use App\Http\Controllers\ManageBookingController;
-use App\Http\Controllers\ManagePagesController;
+use App\Http\Controllers\Backend\dashboardController;
+use App\Http\Controllers\Backend\HotelController;
+use App\Http\Controllers\Backend\LocationController;
+use App\Http\Controllers\Backend\ManageUsersController;
+use App\Http\Controllers\Backend\TourPackagesController;
+use App\Http\Controllers\Backend\ManageBookingController;
+use App\Http\Controllers\Backend\ManagePagesController;
+use App\Http\Controllers\Backend\SpotController;
+use App\Http\Controllers\Frontend\FrontendHomeController;
 use Illuminate\Support\Manager;
 
 // Route::get('/', function () {
 //     return view('admin.master');
 // });
-Route::get("admin/login",[UserController::class,'login'])->name('admin.login');
+
+
+
+//all route for frontend
+Route::get('/',[FrontendHomeController::class,'home'])->name('home');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::group(['prefix'=>'admin'],function(){
+
+    //all route for backend
+
+
+
+
+Route::get("/login",[UserController::class,'login'])->name('admin.login');
 Route::post("/login/form",[UserController::class,'loginPost'])->name('admin.login.post');
 
 
 
 Route::group(['middleware' => 'auth'], function () {
 
-Route::get("/admin/logout",[UserController::class,'logout'])->name('admin.logout');
+Route::get("/logout",[UserController::class,'logout'])->name('admin.logout');
 Route::get("/",[DashboardController::class,'dashboard'])->name('dashboard');
 
-Route::get("/tour-packages",[TourPackagesController::class,'tpackage'])->name('tour-packages');
-Route::get("/manage-users",[ManageUsersController::class,'manageusers']);
-Route::get("/tour-packages/form",[TourPackagesController::class,'createform']);
-Route::post("/tour-packages/store",[TourPackagesController::class,'store'])->name('tour-packages.store');
+Route::get("/tour-packages",[TourPackagesController::class,'tpackage'])->name('tourpackages');
+Route::get("/tour-packages/form",[TourPackagesController::class,'createform'])->name('tourpackages.form');
+Route::post("/tour-packages/store",[TourPackagesController::class,'store'])->name('tourpackages.store');
 
 Route::get("/user/form",[ManageUsersController::class,'form'])->name('user.form');
 Route::get("/user/list",[ManageUsersController::class,'list'])->name('user.list');
@@ -54,9 +85,15 @@ Route::get("/hotel",[HotelController::class,'hotel'])->name('hotel');
 Route::get("/hotel/form",[HotelController::class,'create'])->name('hotel.form');
 Route::post("/hotel/form/store",[HotelController::class,'store'])->name('hotel.store');
 
+
+//Spot
+Route::get('/spot',[SpotController::class,'spot'])->name('spot');
+Route::get('/spot/form',[SpotController::class,'create'])->name('spot.form');
+Route::post('/spot/form/store',[SpotController::class,'store'])->name('spot.store');
+
 });
 
-
+});
 
 
 

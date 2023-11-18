@@ -1,10 +1,9 @@
 @extends('admin.master')
 @section('content')
-    <form action="{{ route('tour-packages.store') }}" method="post">
-        @csrf
         <div class="container">
             <h2>Create Package</h2>
-            <form action="submit_form.php" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('tourpackages.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="" name="name" required>
@@ -27,10 +26,9 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Image:</label>
-                    <input type="file" class="form-control-file" id="" name="image" accept="image/*" required>
+                    <input type="file" class="form-control-file" id="" name="image" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-    </form>
 @endsection

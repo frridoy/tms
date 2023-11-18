@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Http\Controllers\Controller;
 use App\Models\hotel_model;
 use Illuminate\Http\Request;
 use SebastianBergmann\CodeUnit\FunctionUnit;

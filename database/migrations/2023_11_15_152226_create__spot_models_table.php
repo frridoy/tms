@@ -11,17 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('packages', function (Blueprint $table) {
+        Schema::create('_spot_models', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
-            $table->string('code',10);
-            $table->date('calender');
-            $table->text('description')->nullable();
-            $table->string('price');
-            $table->string('image',)->nullable();
+            $table->string('location',20);
+            $table->string('spot_names');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('packages');
+        Schema::dropIfExists('_spot_models');
     }
 };

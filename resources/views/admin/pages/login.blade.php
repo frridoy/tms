@@ -27,25 +27,29 @@
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="typeEmailX-2">Email</label>
-                                    <input type="email" placeholder="Enter Your Email" name="email" id="typeEmailX-2" class="form-control form-control-lg" />
-                                    {{-- @error('email')
-                                    <div class=""alert alert-danger>{{message}}</div>
-                                    @enderror --}}
+                                    <input type="email" placeholder="Enter Your Email" name="email"
+                                        id="typeEmailX-2" class="form-control form-control-lg" />
+                                    @error('email')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
                                 <div class="form-outline ">
                                     <label class="form-label" for="typePasswordX-2">Password</label>
-                                    <input type="password" placeholder="Enter Your Password" name="password" id="typePasswordX-2" class="form-control form-control-lg" />
-                                    {{-- @error('password')
-                                    <div class=""alert alert-danger>{{message}}</div>
-                                    @enderror --}}
+                                    <input type="password" placeholder="Enter Your Password" name="password"
+                                        id="typePasswordX-2" class="form-control form-control-lg" />
+                                    @error('password')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
 
-                                {{-- <!-- Checkbox -->
-                                <div class="form-check d-flex justify-content-start mb-4">
+                                <!-- Remember Password -->
+
+
+                                <div class="form-check d-flex justify-content-start mb-4  mt-4">
                                     <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                                    <label class="form-check-label" for="form1Example3"> Remember password </label>
-                                </div> --}}
+                                    <label class="form-check-label " for="form1Example3">  Remember password </label>
+                                </div>
 
                             </div>
                             <button class="btn btn-primary" type="submit">login</button>

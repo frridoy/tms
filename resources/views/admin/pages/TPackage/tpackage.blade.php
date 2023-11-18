@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-    <a href="{{ url('tour-packages/form') }}" class="btn btn-primary mb-4 mt-4 ">Create Package</a>
+    <a href="{{ route('tourpackages.form') }}" class="btn btn-primary mb-4 mt-4 ">Create Package</a>
 
     <table class="table">
         <thead>
@@ -24,9 +24,13 @@
                     <td>{{ $package->calender }}</td>
                     <td>{{ $package->description }}</td>
                     <td>{{ $package->price }}</td>
-                    <td>{{ $package->image }}</td>
                     <td>
-                      <a href=""class="btn btn-success">Edit</a>
+                        <img style="border-radius: 60px;" width="7%" src="{{url('/uploads//'.$package->image)}}" alt="">
+
+                    </td>
+                    <td>
+                      <a href=""class="btn btn-primary">View</a>
+                      <a href=""class="btn btn-warning">Edit</a>
                       <a href=""class="btn btn-danger">Delete</a>
 
                     </td>
