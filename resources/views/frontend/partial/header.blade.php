@@ -1,5 +1,5 @@
 <header class="continer-fluid ">
-    
+
     <div id="menu-jk" class="header-bottom">
         <div class="container">
             <div class="row nav-row">
@@ -13,6 +13,26 @@
                 <div id="menu" class="col-lg-9 col-md-12 d-none d-lg-block nav-col">
 
                             <ul class="navbad">
+                                @guest
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{route('registration')}}">Registration
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{{route('tourist.login')}}">Login
+                                    </a>
+                                </li>
+
+
+                            @endguest
+
+                            @auth
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{route('tourist.logout')}}">Logout
+                                </a>
+                            </li>
+                            @endauth
+
                                 <li class="nav-item active">
                                     <a class="nav-link" href="index.html">Home
                                     </a>
@@ -23,14 +43,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="packages.html">Packages</a>
                                 </li>
-
+{{--
                                 <li class="nav-item">
                                     <a class="nav-link" href="gallery.html">Gallery</a>
-                                </li>
-
+                                </li> --}}
+{{--
                                 <li class="nav-item">
                                     <a class="nav-link" href="blog.html">Blog</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact_us.html">Contact US</a>
                                 </li>

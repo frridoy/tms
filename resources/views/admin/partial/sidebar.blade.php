@@ -25,7 +25,7 @@
                 </li>
 
                 <li class="menu-item has-child">
-                  <a href="{{route('tourpackages')}}" class="menu-link"> <span class="menu-text">Tour Packages</span></a>
+                  <a href="{{route('tourpackages')}}" class="menu-link"> <span class="menu-text">Tour Package</span></a>
                   {{-- <ul class="menu">
                     <li class="menu-item">
                       <a href="page-clients.html" class="menu-link">Clients</a>

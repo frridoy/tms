@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\ManageBookingController;
 use App\Http\Controllers\Backend\ManagePagesController;
 use App\Http\Controllers\Backend\SpotController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
+use App\Http\Controllers\Frontend\TouristController;
 use Illuminate\Support\Manager;
 
 // Route::get('/', function () {
@@ -20,12 +21,22 @@ use Illuminate\Support\Manager;
 
 
 //all route for frontend
+
 Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 
+Route::get('/registration',[TouristController::class, 'registration'])->name('registration');
+Route::post('/registration',[TouristController::class, 'store'])->name('registration.store');
+
+
+Route::get('/login',[TouristController::class, 'login'])->name('tourist.login');
+Route::post('/login',[TouristController::class,'doLogin'])->name('tourist.do.login');
 
 
 
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/logout',[TouristController::class, 'logout'])->name('tourist.logout');
+});
 
 
 
@@ -40,6 +51,7 @@ Route::get('/',[FrontendHomeController::class,'home'])->name('home');
 
 
 Route::group(['prefix'=>'admin'],function(){
+
 
     //all route for backend
 
@@ -56,21 +68,18 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get("/logout",[UserController::class,'logout'])->name('admin.logout');
 Route::get("/",[DashboardController::class,'dashboard'])->name('dashboard');
 
+//admin_rtour Packages
+
 Route::get("/tour-packages",[TourPackagesController::class,'tpackage'])->name('tourpackages');
 Route::get("/tour-packages/form",[TourPackagesController::class,'createform'])->name('tourpackages.form');
 Route::post("/tour-packages/store",[TourPackagesController::class,'store'])->name('tourpackages.store');
 
-Route::get("/user/form",[ManageUsersController::class,'form'])->name('user.form');
-Route::get("/user/list",[ManageUsersController::class,'list'])->name('user.list');
-Route::post("/user/store",[ManageUsersController::class,'store'])->name('user.store');
-Route::get("/manageBooking/form",[ManageBookingController::class,'booking'])->name('managebooking.form');
+// Route::get("/user/form",[ManageUsersController::class,'form'])->name('user.form');
+// Route::get("/user/list",[ManageUsersController::class,'list'])->name('user.list');
+// Route::post("/user/store",[ManageUsersController::class,'store'])->name('user.store');
+// Route::get("/manageBooking/form",[ManageBookingController::class,'booking'])->name('managebooking.form');
 
-
-
-Route::get("/managepages",[ManagePagesController::class,'mpages'])->name('managepages');
-Route::get("/managepages/form",[ManagePagesController::class,'create'])->name(('managepages.form'));
-Route::post("/managepages/form/store",[ManagePagesController::class,'store'])->name('managepage.store');
-
+//admin_location
 
 Route::get("/location",[LocationController::class,'location_'])->name('location');
 Route::get("/location/form",[LocationController::class,'create'])->name('location.form');
@@ -78,18 +87,21 @@ Route::post("/location/form/store",[LocationController::class,'store'])->name('l
 
 
 
-
-//Hotel
+//admin_Hotel
 
 Route::get("/hotel",[HotelController::class,'hotel'])->name('hotel');
 Route::get("/hotel/form",[HotelController::class,'create'])->name('hotel.form');
 Route::post("/hotel/form/store",[HotelController::class,'store'])->name('hotel.store');
 
 
-//Spot
+//admin_Spot
+
 Route::get('/spot',[SpotController::class,'spot'])->name('spot');
 Route::get('/spot/form',[SpotController::class,'create'])->name('spot.form');
 Route::post('/spot/form/store',[SpotController::class,'store'])->name('spot.store');
+
+//Admin_manage_user
+
 
 });
 
