@@ -1,0 +1,693 @@
+/* =======================================================================
+Template Name: Youtubers
+Author:  SmartEye Technologies
+Author URI: www.smarteyeapps.com
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for Youtubers
+======================================================================= */
+
+/* ===================================== Import Variables ================================== */
+@import 'variable';
+/* ===================================== Basic CSS ==================================== */
+@import 'base/basic_setup';
+
+/* =================== Header Style Starts Here =================== */
+header{
+  @include shado-1();
+  background-color: #FFF;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  .header-top{
+    background-color: #1c2d3ef7;
+
+    .col-det{
+      .ulleft{
+        li{
+          float: left;
+          padding: 12px;
+          color: #d3d7ce;
+          font-size: .85rem;
+          font-weight: 600;
+          i{
+            margin-right: 5px;
+            color: #bfbfbf;
+          }
+          span{
+            margin-left: 15px;
+          }
+        }
+      }
+      .ulright{
+        float: right;
+        li{
+          float: left;
+          padding: 10px;
+          color: #d3d7ce;
+          font-size: 1rem;
+          font-weight: 600;
+          i{
+            margin-right: 5px;
+          }
+          span{
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+  .header-bottom{
+      
+  @media screen and (max-width: 991px){
+      padding: 0px;
+  }  
+    padding: 6px;
+      background-color: #334960;
+    img{
+     
+      @media screen and (max-width: 991px){
+        padding: 5px;
+        margin-top: 0px;
+        max-width: 230px;
+      }
+    }
+  }
+  .nav-col{
+    .navbad{
+       @media screen and (max-width: 991px){
+              width: 100%;
+          }
+      display: block;
+        float: right;
+      li{
+        padding:15px 15px;
+          @media screen and (max-width: 1005px){
+                padding: 15px 12px;
+          }
+        font-weight: 700;
+        font-size: .9rem;
+          float: left;
+          @media screen and (max-width: 991px){
+              float: none;
+              width: 100%;
+              padding: 10px;
+              a{
+                  padding-left: 0px;
+              }
+          }
+          a{
+              color: #fff !important;
+          }
+      }
+      .nav-btn{
+         
+        float: right;
+      }
+    }
+  }
+    .small-menu{
+        float: right;
+        color: #FFF;
+        font-size: 1.8rem;
+        position: absolute;
+        right: 13px;
+        top: 19px;
+    }
+}
+.navbar{
+
+  @media screen and (max-width: 767px){
+    padding: 0px;
+  }
+}
+.navbar-toggler{
+  position: absolute;
+  right: 0px;
+  top: -40px;
+  @media screen and (max-width: 767px){
+    top: -50px;
+
+
+  }
+}
+.scroll-to-fixed-fixed{
+  background-color: #FFF;
+  @include shado-1();
+}
+
+.scroll-to-fixed-fixed{
+  padding: 5px !important;
+}
+
+/* ===================================== Responsive Style CSS ==================================== */
+.slider{
+    padding-top: 123px;
+    @media screen and (max-width: 991px){
+        padding-top: 110px;
+    }
+    .detail-card{
+        position:absolute;
+        background-color: rgba(0,0,0,0.3);
+        margin-top: -50px;
+        height: 50px;
+        width: 100%;
+        font-size: 1rem;
+        color: #FFF;
+        padding: 10px;
+        z-index: 999;
+    }
+}
+
+/* ===================================== Why Choos US Style CSS ==================================== */
+
+.why-choos-us{
+    @include big-padding();
+    background-color: #f6f7f9;
+    .why-ro{
+        .col-card{
+            display: flex;
+            margin-bottom: 30px;
+            .icon{
+                padding: 10px;
+                margin: auto;
+                i{
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    background-color: #47a0ff;
+                    color: #FFF;
+                    border-radius: 50px;
+                    font-size: 1.5rem;
+                    padding-top: 16px;
+                }
+            }
+            .detail{
+                padding: 10px;
+                h4{
+                    font-weight: 600;
+                    font-size: 1.3rem;
+                }
+                p{
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ===================================== Responsive Style CSS ==================================== */
+
+.popular-pack{
+     
+    @include big-padding();
+    background-position: top;
+    .pack-row{
+        margin-top: 15px;
+        .pack-col{
+            background-color: #FFF;
+            @include shado-1();
+            img{
+                
+            }
+            .revire{
+                padding: 10px 15px;
+                display: flow-root;
+                .rat{
+                    li{
+                        float: left;
+                        i{
+                            color: #f1b517;
+                            font-size: .9rem;
+                        }
+                    }
+                }
+                .pric{
+                    float: right;
+                    font-weight: 700;
+                }
+            }
+            .detail{
+                padding: 10px 15px;
+                padding-top: 0px;
+               
+                h4{
+                    font-weight: 600;
+                }
+                p{
+                    font-size: .9rem;
+                }
+            }
+            .options{
+                padding: 10px 15px;
+                 padding-bottom: 0px;
+                padding-top: 0px;
+                border-top: 1px solid #cccccc82;
+                ul{
+                    li{
+                        float: left;
+                        padding: 10px 20px;
+                       
+                        border-right: 1px solid #cccccc82;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.no-bgpack{
+    background-image: url(../images/most-popular-bg.jpg);
+}
+/* =================== Destination Style Starts Here =================== */
+
+
+.destinations{
+    @include big-padding();
+    background-color: #fff;
+    .dest-row{
+        margin-top: 20px;
+        .dest-col{
+            text-align: center;
+            margin-bottom: 20px;
+            .dest-img{
+               padding: 10px;
+                border: 1px solid #CCC;
+            }
+            h3{
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                font-weight: 600;
+            }
+            p{
+                font-size: .93rem;
+                margin-bottom: 20px;
+            }
+            .btn{
+                box-shadow: none;
+                font-weight: 600;
+                border-radius: 5px;
+                border: 2px solid $color-primary;
+                padding: 5px 20px;
+            }
+            &:hover{
+                box-shadow: 0 5px 16px 0 rgba(0,0,0,.15);
+                transition: all .25s ease;
+                .dest-img{
+                    border: none;
+                }
+                padding-bottom: 25px;
+            }
+            
+        }
+    }
+}
+
+
+/* =================== Tour Type Style Starts Here =================== */
+
+.our-capablit{
+    .layy{
+        background-color: rgba(0,0,0,0.8);
+        @include big-padding();
+        padding: 80px;
+        padding-bottom: 30px;
+    }
+    
+    background-image: url(../images/slider/slid_2.jpg);
+    background-attachment: fixed;
+    background-size: 100%;
+    .session-title{
+        h2{
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+    .cap-det{
+        text-align: center;
+        margin-bottom: 60px;
+        h6{
+            margin-top: 30px;
+            color: #FFF;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        p{
+            font-size: .85rem;
+            color: #FFF;
+        }
+        .icon{
+            border: 6px solid #FFF;
+            margin: auto;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            padding-top: 25px;
+            i{
+                color: #fff;
+                font-size: 2.8rem;
+            }
+        }
+    }
+}
+
+.progress {
+  width: 100px;
+  height: 100px;
+  background: none;
+  position: relative;
+}
+
+.progress::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress>span {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.progress .progress-left {
+  left: 0;
+}
+
+.progress .progress-bar {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  top: 0;
+}
+
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+
+.progress .progress-right {
+  right: 0;
+}
+
+.progress .progress-right .progress-bar {
+  left: -100%;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+}
+
+.progress .progress-value {
+  position: absolute;
+  top: 0;
+  left: 0;
+    .h2{
+        font-size: 1.2rem;
+        margin-top: 13px;
+        color: #FFF;
+    }
+}
+
+
+/* =================== Review Style Starts Here =================== */
+
+.review{
+    @include big-padding();
+    background-color: #FFF;
+    .review-row{
+        .review-col{
+            display: flex;
+            margin-bottom: 30px;
+            .profil{
+                padding: 10px;
+                img{
+                    border-radius: 50%;
+                    background-color: #fff;
+                    padding: 4px;
+                    @inclide card-1();
+                }
+            }
+            .review-detail{
+                h4{
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                }
+                h6{
+                    margin-top: 10px;
+                    font-weight: 600;
+                    font-family: .9rem;
+                }
+                p{
+                    font-size: .9rem;
+                }
+                .rat{
+                    margin-top: -20px !important;
+                    li{
+                        float: right;
+                        margin-right: 4px;
+                        color: #ffcd47;
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* =================== Blog Style Starts Here =================== */
+
+.blog{
+    background-color:#f7f7f7;
+    @include big-padding();
+    .blog-row{
+        .blog-col{
+            background-color: #fff;
+            padding: 15px;
+            @include shado-4();
+            margin-bottom: 30px;
+            img{
+                margin-bottom: 20px;
+                width: 100%;
+            }
+            span{
+               color: #a09f9f;    
+               font-size: .83rem;
+            }
+            h4{
+                margin-top: 15px;
+                font-weight: 600;
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+                line-height: 26px;
+            }
+            p{
+                font-weight: 500;
+                font-size: .93rem;
+                line-height: 25px;
+            }
+        }
+    }
+}
+
+/* ===================================== Fooer CSS ================================== */
+
+.footer {
+  padding: 50px;
+  background-color: #334960;
+  color: #FFF; }
+  @media screen and (max-width: 940px) {
+    .footer {
+      padding: 50px 10px; } }
+  .footer h2 {
+    font-size: 22px;
+      margin-top: 20px;
+      color: #fff;
+      margin-bottom: 20px;
+      font-weight: 600;
+}
+  .footer p {
+    text-align: justify;
+    text-indent: 20px;
+    font-size: .9rem; }
+  .footer .link-list li {
+    padding: 7px;
+    font-weight: 500;
+    font-size: .95rem;
+    border-bottom: 1px solid #7586985c; }
+    .footer .link-list li a {
+      color: #FFF; }
+    .footer .link-list li i {
+      float: right; }
+  .footer .map-img {
+    font-weight: 600;
+    font-size: 17px;
+    padding-left: 20px; }
+address{
+    font-size: .95rem;
+}
+.copy {
+  padding: 20px;
+  background-color: #2a3c4e;
+  font-size: .85rem;
+  color: #FFF; }
+  .copy a {
+    color: #FFF; }
+  .copy span {
+    float: right; }
+    .copy span i {
+      margin-right: 20px; }
+    @media screen and (max-width: 777px) {
+      .copy span {
+        display: none; } }
+
+/* ===================================== About CSS ================================== */
+
+.about-us{
+  background-color: #FFF;
+  @include big-padding();
+  .natur-row{
+    margin-top: 20px;
+  }
+  .text-part{
+    h2{
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    p{
+      text-indent: 20px;
+      margin-bottom: 15px;
+      line-height: 27px;
+      font-weight: 500;
+      text-align: justify;
+        font-size: .9rem;
+    }
+
+  }
+  .image-part{
+    img{
+      background-color: #FFF;
+      padding: 10px;
+      box-shadow: 0 0 10px 5px #ebebeb;
+    }
+  }
+}
+
+/* =================== Our Team Starts Here =================== */
+
+.our-team{
+    @media screen and (max-width: 450px) {
+        padding: 30px 10px;
+    }
+    padding:50px;
+        .content-title h2{
+            margin-bottom: 50px;
+        }
+    .team-member{
+         @media screen and (max-width: 767px) {
+             margin-bottom: 15px;
+        }
+        padding: 10px;
+        background-color: #FFF;
+        img{margin-bottom: 5px;}
+        @include card-1();
+        p{margin-top: 5px; 
+            font-size: .85rem;
+        }
+        b{padding: 5px;}
+        text-align: center;
+        ul li{
+            float: left;padding: 5px;
+            width: 20%; text-align: center;
+            border: 1px solid #efefefa6;
+        }
+        ul{
+            margin: 0px;
+            margin-top: 10px;
+        }
+    }
+
+}
+
+/* ===================================== Gallery Style  ================================== */
+.gallery-filter {
+  width: 100%;
+  text-align: center; }
+  .gallery-filter .btn {
+    background-color: #FFF; }
+
+.gallery {
+    @include big-padding();
+  padding: 30px;
+  background-color: #FFF; }
+
+.gallery-title {
+  font-size: 36px;
+  color: #00ab9f;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 70px; }
+
+.gallery-title:after {
+  content: "";
+  position: absolute;
+  width: 7.5%;
+  left: 46.5%;
+  height: 45px;
+  border-bottom: 1px solid $color-primary; }
+
+.filter-button {
+  font-size: 18px;
+  border: 1px solid $color-primary;
+  border-radius: 5px;
+  text-align: center;
+  color: $color-primary;
+  margin-bottom: 30px; }
+
+.filter-button:hover {
+  font-size: 18px;
+  border: 1px solid $color-primary;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffffff;
+  background-color: $color-primary; }
+
+.btn-default:active .filter-button:active {
+  background-color: $color-primary;
+  color: white; }
+
+.port-image {
+  width: 100%; }
+
+.gallery_product {
+  margin-bottom: 30px; }
+
+
+
+
+/* ===================================== Responsive Style CSS ==================================== */
+
+@import 'response/responsive';
