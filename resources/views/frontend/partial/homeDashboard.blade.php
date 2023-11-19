@@ -126,7 +126,7 @@
     <div class="popular-pack no-bgpack container-fluid">
         <div class="container">
             <div class="session-title">
-                <h2>Popular Packages</h2>
+                <h2>Our Packages</h2>
                 <p>Sagittis vulputate magna sagittis sagittis erat feugiat nullam cubilia amet dignissim Euismod.</p>
             </div>
             <div class="row pack-row">
@@ -142,12 +142,15 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span class="pric">
-                                $750
+                                BDT 7500
                             </span>
                         </div>
                         <div class="detail row no-margin">
-                            <h4>Amazon Cruise</h4>
+                            <h4>Coxs Bazar</h4>
                             <p>Mattis interdum nunc massa. Velit. Nonummy penatibus</p>
+
+                            <button class="btn btn-outline-success">Book Now</button>
+
                         </div>
                         <div class="options row no-margin">
                             <ul>
@@ -173,12 +176,13 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span class="pric">
-                                $750
+                                BDT 6000
                             </span>
                         </div>
                         <div class="detail row no-margin">
-                            <h4>Amazon Cruise</h4>
+                            <h4> Beauty of Sylet</h4>
                             <p>Mattis interdum nunc massa. Velit. Nonummy penatibus</p>
+                            <button class="btn btn-outline-success">Book Now</button>
                         </div>
                         <div class="options row no-margin">
                             <ul>
@@ -194,7 +198,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="pack-col">
-                        <img src="assets/images/packages/p3.jpg" alt="">
+                        <img src="{{ url('forntend/') }}/assets/images/packages/p3.jpg" alt="">
                         <div class="revire row no-margin">
                             <ul class="rat">
                                 <li><i class="fa fa-star"></i></li>
@@ -204,12 +208,14 @@
                                 <li><i class="fa fa-star"></i></li>
                             </ul>
                             <span class="pric">
-                                $750
+                                BDT 5000
                             </span>
                         </div>
                         <div class="detail row no-margin">
-                            <h4>Amazon Cruise</h4>
+                            <h4>Chottogram</h4>
                             <p>Mattis interdum nunc massa. Velit. Nonummy penatibus</p>
+
+                            <button class="btn btn-outline-success">Book Now</button>
                         </div>
                         <div class="options row no-margin">
                             <ul>
