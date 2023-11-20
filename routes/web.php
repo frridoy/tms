@@ -73,6 +73,10 @@ Route::get("/",[DashboardController::class,'dashboard'])->name('dashboard');
 Route::get("/tour-packages",[TourPackagesController::class,'tpackage'])->name('tourpackages');
 Route::get("/tour-packages/form",[TourPackagesController::class,'createform'])->name('tourpackages.form');
 Route::post("/tour-packages/store",[TourPackagesController::class,'store'])->name('tourpackages.store');
+Route::get('/tourpackage/delete/{id}',[TourPackagesController::class,'delete'])->name('package.delete');
+Route::get('/tourpackage/edit/{id}',[TourPackagesController::class,'edit'])->name('package.edit');
+Route::put('/tourpackage/update/{id}',[TourPackagesController::class,'update'])->name('package.update');
+Route::get('/tourpackage/view/{id}',[TourPackagesController::class,'view'])->name('package.view');
 
 // Route::get("/user/form",[ManageUsersController::class,'form'])->name('user.form');
 // Route::get("/user/list",[ManageUsersController::class,'list'])->name('user.list');

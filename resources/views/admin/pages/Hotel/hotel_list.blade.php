@@ -20,6 +20,7 @@
                     <td>{{ $item->type }}</td>
                     <td>{{ $item->price }}.00 BDT</td>
                     <td>
+                        <a href="" class="btn btn-primary"> View </a>
                         <a href="" class="btn btn-warning"> Edit </a>
                         <a href="" class="btn btn-danger"> Delete </a>
                     </td>

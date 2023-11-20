@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name',20);
             $table->string('code',10);
-            $table->date('calender');
+            $table->string('duration');
             $table->text('description')->nullable();
-            $table->string('price');
+            $table->integer('price');
             $table->string('image',)->nullable();
             $table->timestamps();
         });

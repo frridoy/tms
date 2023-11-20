@@ -22,8 +22,10 @@
         <td>{{$hridoy->name}}</td>
         <td>{{$hridoy->distance}}</td>
         <td>
-            <a href=""class="btn btn-success">Edit</a>
+            <a href=""class="btn btn-primary">View</a>
+            <a href=""class="btn btn-waring">Edit</a>
             <a href=""class="btn btn-danger">Delete</a>
+
 
           </td>
       </tr>

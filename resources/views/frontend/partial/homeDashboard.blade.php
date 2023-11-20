@@ -10,7 +10,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <a href="single.html">
-                        <img src="{{ url('forntend/') }}/assets/images/slider/slid_2.jpg" class="d-block w-100"
+                        <img src="{{url('forntend/')}}/assets/images/slider/slid_2.jpg" class="d-block w-100"
                             alt="...">
                         <div class="detail-card">
                             <p>Pictures, abstract symbols the ingredients with symbols the
@@ -166,7 +166,7 @@
 
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="pack-col">
-                        <img src="{{ url('forntend/') }}/assets/images/packages/p2.jpg" alt="">
+                        <img src="{{ url('forntend/')}}/assets/images/packages/p2.jpg" alt="">
                         <div class="revire row no-margin">
                             <ul class="rat">
                                 <li><i class="fa fa-star"></i></li>

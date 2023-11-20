@@ -22,16 +22,59 @@ class TourPackagesController extends Controller
 
         return view('admin.pages.TPackage.form');
     }
+    public function delete($id){
+     $package= Package::find($id);
+     if ($package){
+        $package->delete();
+     }
+     return redirect()->back();
+    }
+    public function view($id){
+        $package=Package::find($id);
+        return view('admin.pages.Tpackage.view', compact('package'));
+        }
+
+      public function edit($id){
+      $package=Package::find($id);
+      return view('admin.pages.Tpackage.edit', compact('package'));
+     }
+     public function update(Request $request,$id){
+    $package=Package::find($id);
+    if ($package){
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+
+        }
+        $package->update([
+            'name' => $request->name,
+            'code' => $request->code,
+            'duration' => $request->duration,
+            'description' => $request->description,
+            'price' => $request->price,
+            'image' => $fileName
+
+        ]);
+        return redirect()->route('tourpackages');
+    }
+
+}
+
+
+
     public function store(Request $request)
     {
 
         $validate=Validator::make($request->all(),[
             'name'=>'required',
             'code'=>'required',
-            'caender'=>'required',
+            'duration'=>'required',
             'description'=>'required',
             'price'=>'required',
-            'image'=>'required',
+            // 'image'=>'required',
         ]);
 
         if($validate->fails())
@@ -44,7 +87,6 @@ class TourPackagesController extends Controller
         {
             $file=$request->file('image');
             $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
-
             $file->storeAs('/uploads',$fileName);
 
         }
@@ -52,7 +94,7 @@ class TourPackagesController extends Controller
         Package::create([
             'name' => $request->name,
             'code' => $request->code,
-            'calender' => $request->calendar,
+            'duration' => $request->duration,
             'description' => $request->description,
             'price' => $request->price,
             'image' => $fileName
