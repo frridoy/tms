@@ -5,6 +5,7 @@
 
 
 <section class="section about-section gray-bg" id="about">
+    <h2>Tour Package View</h2>
     <div class="container">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-lg-6">
@@ -56,7 +57,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="about-avatar">
-                    <img  style="border-radius: 15%"width="320px" src="https://i.ibb.co/MMrw13x/FB-IMG-1696330207702-1.jpg"title="" alt="">
+                    <img  style="border-radius: 15%"width="320px" src="{{url('/uploads//' . $package->image) }} "title="" alt="">
                 </div>
             </div>
         </div>

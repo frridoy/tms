@@ -88,6 +88,10 @@ Route::get('/tourpackage/view/{id}',[TourPackagesController::class,'view'])->nam
 Route::get("/location",[LocationController::class,'location_'])->name('location');
 Route::get("/location/form",[LocationController::class,'create'])->name('location.form');
 Route::post("/location/form/store",[LocationController::class,'store'])->name('location.store');
+Route::get('/location/view/{id}',[LocationController::class,'view'])->name('location.view');
+Route::get('/location/delete/{id}',[LocationController::class,'delete'])->name('location.delete');
+Route::get('/location/edit/{id}',[LocationController::class,'edit'])->name('location.edit');
+Route::put('/location/update/{id}',[LocationController::class,'update'])->name('location.update');
 
 
 

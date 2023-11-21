@@ -2,7 +2,7 @@
 @section('content')
 
 
-<a href="{{route('location.form') }}" class="btn btn-primary mb-4 mt-4 ">Create Package</a>
+<a href="{{route('location.form') }}" class="btn btn-primary mb-4 mt-4 ">Create Location</a>
 <table class="table table-hover text-center">
 
     <thead>
@@ -20,11 +20,11 @@
       <tr>
         <th scope="row">{{$key +1}}</th>
         <td>{{$hridoy->name}}</td>
-        <td>{{$hridoy->distance}}</td>
+        <td>{{$hridoy->distance}} Kilometers</td>
         <td>
-            <a href=""class="btn btn-primary">View</a>
-            <a href=""class="btn btn-waring">Edit</a>
-            <a href=""class="btn btn-danger">Delete</a>
+            <a href="{{route('location.view',$hridoy->id)}}"class="btn btn-primary">View</a>
+            <a href="{{route('location.edit',$hridoy->id)}}" class="btn btn-warning">Edit</a>
+            <a href="{{route('location.delete',$hridoy->id)}}"class="btn btn-danger">Delete</a>
 
 
           </td>

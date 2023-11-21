@@ -1,20 +1,22 @@
 @extends('admin.master')
 @section('content')
 
-<form action="{{ route('location.store') }}"method="post" >
+<form action="{{ route('location.update',$locationval->id) }}"method="post"enctype="multipart/form-data" >
     @csrf
+    @method('put')
+
     <div class="container">
-        <h2>Create Location</h2>
+        <h2>Edit Location</h2>
 
         <form action="submit_form.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
 
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="" name="name" required>
+                <input value="{{$locationval->name}}" type="text" class="form-control" id="" name="name" required>
             </div>
             <div class="form-group">
                 <label for="distance">Distance:</label>
-                <input type="number" class="form-control" id="" name="distance" required>
+                <input value="{{$locationval->distance}}" type="text" class="form-control" id="" name="distance" required>
             </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
