@@ -1,11 +1,14 @@
 @extends('admin.master')
 @section('content')
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
     <style>
         body {
@@ -57,22 +60,26 @@
 
 <div class="profile-container">
 
-{{-- //for Image
+
 
     <div class="profile-picture">
-        <img src="{{url('/uploads/'. auth()->user()->image)}}" alt="Profile Picture">
-    </div> --}}
+        <img src="https://i.ibb.co/0nqVcRc/FB-IMG-1696330207702-1.jpg" alt="">
+    </div>
 
     <div class="user-info">
 
-        <h4> Location Details </h4><hr>
+        <h4> Admin Profile </h4><hr>
 
-        <h6>Location Name : {{$locationval->name}}</h6><hr>
-        <h6>Total Distance: {{$locationval->distance}} Kilometers</h6><hr>
+        <h6> Name : Foyzur Rahman Ridoy</h6><hr>
+        <h6> Position:  Web Developer </h6><hr>
+        <h6> Email: <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">foyzur.r.h@gmail.com</a></h6><hr>
+        <h6> Contact:  +8801614898789 </h6><hr>
+        <h6>Traveling is my favourite hobby. For that reason, I create a platform where tourist can easily book the package and explore the world.</h6> <hr>
 
 
-        <a class="btn btn-outline-primary" href="{{route('location',$locationval->id)}}"> Back </a>
-        <a class="btn btn-outline-warning" href="{{route('location.edit',$locationval->id)}}"> Edit </a> <hr>
+
+        <a class="btn btn-outline-primary" href="{{route('dashboard')}}"> Back </a>
+
 
     </div>
 
@@ -80,4 +87,5 @@
 
 </body>
 </html>
+
 @endsection

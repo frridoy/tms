@@ -65,14 +65,15 @@
 
     <div class="user-info">
 
-        <h4> Location Details </h4><hr>
+        <h4> Hotel Details </h4><hr>
 
-        <h6>Location Name : {{$locationval->name}}</h6><hr>
-        <h6>Total Distance: {{$locationval->distance}} Kilometers</h6><hr>
+        <h6>Hotel Name : {{$items->name}}</h6><hr>
+        <h6>Hotel Type:  {{ $items->type }}</h6><hr>
+        <h6>Hotel Price:  {{ $items->price }}</h6><hr>
 
 
-        <a class="btn btn-outline-primary" href="{{route('location',$locationval->id)}}"> Back </a>
-        <a class="btn btn-outline-warning" href="{{route('location.edit',$locationval->id)}}"> Edit </a> <hr>
+        <a class="btn btn-outline-success" href="{{route('hotel',$items->id)}}"> Back </a>
+        <a class="btn btn-outline-warning" href="{{route('hotel.edit',$items->id)}}">Edit </a> <hr>
 
     </div>
 

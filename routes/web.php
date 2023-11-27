@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\dashboardController;
@@ -47,14 +48,10 @@ Route::group(['middleware'=>'auth'],function(){
 
 
 
-
+//all route for backend
 
 
 Route::group(['prefix'=>'admin'],function(){
-
-
-    //all route for backend
-
 
 
 
@@ -100,6 +97,10 @@ Route::put('/location/update/{id}',[LocationController::class,'update'])->name('
 Route::get("/hotel",[HotelController::class,'hotel'])->name('hotel');
 Route::get("/hotel/form",[HotelController::class,'create'])->name('hotel.form');
 Route::post("/hotel/form/store",[HotelController::class,'store'])->name('hotel.store');
+Route::get("/hotel/delete/{id}",[HotelController::class,'delete'])->name('hotel.delete');
+Route::get("/hotel/edit/{id}",[HotelController::class,'edit'])->name('hotel.edit');
+Route::put("/hotel/update/{id}",[HotelController::class,'update'])->name('hotel.update');
+Route::get("/hotel/view/{id}",[HotelController::class,'view'])->name('hotel.view');
 
 
 //admin_Spot
@@ -108,7 +109,9 @@ Route::get('/spot',[SpotController::class,'spot'])->name('spot');
 Route::get('/spot/form',[SpotController::class,'create'])->name('spot.form');
 Route::post('/spot/form/store',[SpotController::class,'store'])->name('spot.store');
 
-//Admin_manage_user
+//Admin_Profile
+
+Route::get('/myprofile',[AdminProfileController::class,'adminprofile'])->name('adminprofile');
 
 
 });

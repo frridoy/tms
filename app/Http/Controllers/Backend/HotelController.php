@@ -26,4 +26,31 @@ class HotelController extends Controller
         ]);
         return redirect ()->route('hotel');
     }
+    public function delete ($id){
+        $items=hotel_model::find($id);
+        if($items)
+        $items->delete();
+        return redirect ()->route('hotel');
+    }
+    public function edit ($id){
+        $items=hotel_model::find($id);
+        return view('admin.pages.Hotel.edit', compact('items'));
+
+    }
+    public function view ($id){
+        $items=hotel_model::find($id);
+        return view('admin.pages.Hotel.view', compact('items'));
+
+    }
+    public function  update(Request $request, $id){
+        $items=hotel_model::find($id);
+        if($items)
+        $items->update([
+            'name'=>$request->name,
+            'type'=>$request->type,
+            'price'=>$request->price,
+        ]);
+        return redirect()->route('hotel');
+    }
+
 }

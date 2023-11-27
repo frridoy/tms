@@ -32,6 +32,7 @@ class LocationController extends Controller
            }
            public function update(Request $request,$id){
             $locationval=locationmodel::find($id);
+            
             if ($locationval){
 
                 $locationval->update([
