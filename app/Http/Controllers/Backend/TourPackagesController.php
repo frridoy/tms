@@ -41,7 +41,7 @@ class TourPackagesController extends Controller
      public function update(Request $request,$id){
     $package=Package::find($id);
     if ($package){
-        $fileName=null;
+        $fileName=$package->image;
         if($request->hasFile('image'))
         {
             $file=$request->file('image');

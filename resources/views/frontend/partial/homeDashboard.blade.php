@@ -281,96 +281,7 @@
     </div>
 
 
-    <!--################### Tour Type Starts Here #######################--->
-    <div id="why" class="our-capablit container-fluid">
-        <div class="layy">
-            <div class="container">
-                <div class="session-title">
-                    <h2>Tour Type</h2>
 
-                </div>
-                <div class="row mt-5">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fas fa-walking"></i>
-                            </div>
-                            <h6>Walking</h6>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fas fa-car"></i>
-                            </div>
-                            <h6>Safari</h6>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fas fa-fire"></i>
-                            </div>
-                            <h6>Camp Fire</h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fab fa-fly"></i>
-                            </div>
-                            <h6>Air Ride</h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fas fa-ship"></i>
-                            </div>
-                            <h6>Cruise</h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fas fa-suitcase-rolling"></i>
-                            </div>
-                            <h6>Hiking</h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fas fa-hippo"></i>
-                            </div>
-                            <h6>Wild Life</h6>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="cap-det">
-                            <div class="icon">
-                                <i class="fas fa-baseball-ball"></i>
-                            </div>
-                            <h6>Sports</h6>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!--################### Tour Review Starts Here #######################--->
@@ -516,4 +427,5 @@
         </div>
 
     </div>
+
 @endsection
