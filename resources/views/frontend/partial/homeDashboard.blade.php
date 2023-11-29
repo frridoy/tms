@@ -130,104 +130,46 @@
                 <p>Sagittis vulputate magna sagittis sagittis erat feugiat nullam cubilia amet dignissim Euismod.</p>
             </div>
             <div class="row pack-row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="pack-col">
-                        <img src="{{ url('forntend/') }}/assets/images/packages/p1.jpg" alt="">
-                        <div class="revire row no-margin">
-                            <ul class="rat">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span class="pric">
-                                BDT 7500
-                            </span>
+              @foreach ($packages as $package )
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="pack-col">
+                    <img src="{{ url('/uploads//' . $package->image) }}" alt="">
+                    <div class="revire row no-margin">
+                        <ul class="rat">
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa fa-star"></i></li>
+                        </ul>
+                        <span class="pric">
+                            {{$package->price}}.00 BDT
+                        </span>
+                    </div>
+                    <div class="detail row no-margin">
+                        <h4>{{$package->name}}</h4>
+                        <p>{{$package->description}}</p>
+                        <div class="text-center" >
+                            <button class="btn btn-outline-success mt-2 "><a href="{{route('singlepackage.view',$package->id)}}">Book Now</a></button>
                         </div>
-                        <div class="detail row no-margin">
-                            <h4>Coxs Bazar</h4>
-                            <p>Mattis interdum nunc massa. Velit. Nonummy penatibus</p>
 
-                            <button class="btn btn-outline-success">Book Now</button>
 
-                        </div>
-                        <div class="options row no-margin">
-                            <ul>
-                                <li><i class="fas fa-car"></i></li>
-                                <li><i class="fab fa-fly"></i></li>
-                                <li><i class="fas fa-cocktail"></i></li>
-                                <li><i class="fas fa-umbrella-beach"></i></li>
-                                <li><i class="far fa-bell"></i></li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div class="options row no-margin">
+                        <ul>
+                            <li><i class="fas fa-car"></i></li>
+                            <li><i class="fab fa-fly"></i></li>
+                            <li><i class="fas fa-cocktail"></i></li>
+                            <li><i class="fas fa-umbrella-beach"></i></li>
+                            <li><i class="far fa-bell"></i></li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+              @endforeach
 
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="pack-col">
-                        <img src="{{ url('forntend/')}}/assets/images/packages/p2.jpg" alt="">
-                        <div class="revire row no-margin">
-                            <ul class="rat">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span class="pric">
-                                BDT 6000
-                            </span>
-                        </div>
-                        <div class="detail row no-margin">
-                            <h4> Beauty of Sylet</h4>
-                            <p>Mattis interdum nunc massa. Velit. Nonummy penatibus</p>
-                            <button class="btn btn-outline-success">Book Now</button>
-                        </div>
-                        <div class="options row no-margin">
-                            <ul>
-                                <li><i class="fas fa-car"></i></li>
-                                <li><i class="fab fa-fly"></i></li>
-                                <li><i class="fas fa-cocktail"></i></li>
-                                <li><i class="fas fa-umbrella-beach"></i></li>
-                                <li><i class="far fa-bell"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="pack-col">
-                        <img src="{{ url('forntend/') }}/assets/images/packages/p3.jpg" alt="">
-                        <div class="revire row no-margin">
-                            <ul class="rat">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                            <span class="pric">
-                                BDT 5000
-                            </span>
-                        </div>
-                        <div class="detail row no-margin">
-                            <h4>Chottogram</h4>
-                            <p>Mattis interdum nunc massa. Velit. Nonummy penatibus</p>
 
-                            <button class="btn btn-outline-success">Book Now</button>
-                        </div>
-                        <div class="options row no-margin">
-                            <ul>
-                                <li><i class="fas fa-car"></i></li>
-                                <li><i class="fab fa-fly"></i></li>
-                                <li><i class="fas fa-cocktail"></i></li>
-                                <li><i class="fas fa-umbrella-beach"></i></li>
-                                <li><i class="far fa-bell"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

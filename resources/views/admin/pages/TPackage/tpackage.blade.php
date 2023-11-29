@@ -32,7 +32,7 @@
                         <a href="{{route('package.edit',$package->id)}}"class="btn btn-warning">Edit</a>
                         <a href="{{route('package.delete',$package->id)}}"class="btn btn-danger">Delete</a>
                     </td>
-            </tr>
+                   </tr>
             @endforeach
         </tbody>
     </table>

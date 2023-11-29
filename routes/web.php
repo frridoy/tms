@@ -36,12 +36,13 @@ Route::get('/login',[TouristController::class, 'login'])->name('tourist.login');
 Route::post('/login',[TouristController::class,'doLogin'])->name('tourist.do.login');
 
 
+Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
 Route::group(['middleware'=>'auth'],function(){
 
     Route::get('/logout',[TouristController::class, 'logout'])->name('tourist.logout');
     //singlepackage
-    Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
+
 
 
     //admin post to the website
