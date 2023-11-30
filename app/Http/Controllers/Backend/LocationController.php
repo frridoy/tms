@@ -24,6 +24,7 @@ class LocationController extends Controller
             if ($locationval){
                $locationval->delete();
             }
+            notify()->success('Location Delete Sucessfully.');
             return redirect()->back();
            }
            public function edit($id){
@@ -32,14 +33,14 @@ class LocationController extends Controller
            }
            public function update(Request $request,$id){
             $locationval=locationmodel::find($id);
-            
+
             if ($locationval){
 
                 $locationval->update([
                 'name' => $request->name,
                 'distance' => $request->distance,
     ]);
-
+    notify()->success('Location Update Sucessfully.');
 return redirect()->route('location');
 
             }
@@ -50,7 +51,7 @@ return redirect()->route('location');
         'name' => $request->name,
         'distance' => $request->distance,
     ]);
-
+    notify()->success('Location Details Create Sucessfully.');
 return redirect()->route('location');
 
     }

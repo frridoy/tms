@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\locationmodel;
 use App\Models\Package;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,7 +20,6 @@ class TourPackagesController extends Controller
 
     public function createform()
     {
-
         return view('admin.pages.TPackage.form');
     }
     public function delete($id){
@@ -27,6 +27,7 @@ class TourPackagesController extends Controller
      if ($package){
         $package->delete();
      }
+     notify()->success('Tour Package Delete Sucessfully.');
      return redirect()->back();
     }
     public function view($id){
@@ -58,6 +59,7 @@ class TourPackagesController extends Controller
             'image' => $fileName
 
         ]);
+        notify()->success('Tour Package Update Sucessfully.');
         return redirect()->route('tourpackages');
     }
 
@@ -100,6 +102,7 @@ class TourPackagesController extends Controller
             'image' => $fileName
 
         ]);
+        
         return redirect()->route('tourpackages');
     }
 }

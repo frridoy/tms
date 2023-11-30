@@ -242,6 +242,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin nisi id consequat bibendum.
                     Phasellus at convallis elit. In purus enim, scelerisque id arcu vitae</p>
             </div>
+
             <div class="dest-row row">
                 <div class="col-lg-4 col-md-6">
                     <div class="dest-col">

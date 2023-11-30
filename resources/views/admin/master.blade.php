@@ -2,6 +2,7 @@
  <html lang="en">
 
  <head>
+    @notifyCss
      <!-- Required meta tags -->
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- End Required meta tags -->
@@ -44,10 +45,21 @@
          // add loading class to html immediately
          document.querySelector('html').classList.add('loading');
      </script><!-- END THEME STYLES -->
+
+
+<style>
+    .notify {
+    z-index: 9999;
+    justify-content: center;
+    }
+    </style>
+
  </head>
 
  <body>
      <!-- .app -->
+
+     @include('notify::components.notify')
      <div class="app">
 
          @include('admin.partial.header')
@@ -90,6 +102,7 @@
          gtag('js', new Date());
          gtag('config', 'UA-116692175-1');
      </script>
+     @notifyJs
  </body>
 
  </html>

@@ -11,8 +11,10 @@ use App\Http\Controllers\Backend\TourPackagesController;
 use App\Http\Controllers\Backend\ManageBookingController;
 use App\Http\Controllers\Backend\ManagePagesController;
 use App\Http\Controllers\Backend\SpotController;
+use App\Http\Controllers\Backend\TransportController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\TouristController;
+use App\Http\Controllers\Frontend\SinglePackageViewController;
 use Illuminate\Support\Manager;
 
 // Route::get('/', function () {
@@ -36,7 +38,19 @@ Route::post('/login',[TouristController::class,'doLogin'])->name('tourist.do.log
 
 
 Route::group(['middleware'=>'auth'],function(){
+
     Route::get('/logout',[TouristController::class, 'logout'])->name('tourist.logout');
+    //singlepackage
+    Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
+
+
+    //admin post to the website
+
+    //
+
+
+
+
 });
 
 
@@ -108,6 +122,11 @@ Route::get("/hotel/view/{id}",[HotelController::class,'view'])->name('hotel.view
 Route::get('/spot',[SpotController::class,'spot'])->name('spot');
 Route::get('/spot/form',[SpotController::class,'create'])->name('spot.form');
 Route::post('/spot/form/store',[SpotController::class,'store'])->name('spot.store');
+
+//Transport
+Route::get('/transport',[TransportController::class,'transport'])->name('transport');
+Route::get('/transport/form',[TransportController::class,'create'])->name('transport.form');
+Route::post('/transport/form/store',[TransportController::class,'store'])->name('transport.store');
 
 //Admin_Profile
 

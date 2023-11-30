@@ -27,13 +27,16 @@ class UserController extends Controller
         $credentials = $request->except('_token');
         $login = auth()->attempt($credentials);
         if ($login) {
+            notify()->success('Login Sucessfully.');
             return redirect()->route('dashboard');
         }
+        // notify()->success('Invalid User Email or Password.');
         return redirect()->back()->withErrors('Invalid User Email or Password');
     }
     public function logout()
     {
         auth()->logout();
+
         return redirect()->route('admin.login');
     }
 }

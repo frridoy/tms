@@ -55,7 +55,7 @@
                 </li>
 
                 <li class="menu-item has-child">
-                    <a href="#" class="menu-link"><span class=""></span>
+                    <a href="{{route('transport')}}" class="menu-link"><span class=""></span>
                         <span class="menu-text">Transport</span></a>
                     {{-- <ul class="menu"> --}}
                     {{-- </ul> --}}
