@@ -13,4 +13,16 @@ class FrontendHomeController extends Controller
 
         return view ('frontend.partial.homeDashboard',compact('packages'));
     }
+    public function search (Request $request){
+
+
+        if($request->search)
+        {
+            $packages=Package::where('name','LIKE','%'.$request->search.'%')->get();
+
+        }else{
+            $packages=Package::all();
+        }
+        return view('frontend.pages.search', compact('packages'));
+    }
 }

@@ -44,8 +44,10 @@ Route::post('/login',[TouristController::class,'doLogin'])->name('tourist.do.log
 
 Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
-Route::get('/select', [SinglePackageViewController::class, 'select'])->name('select');
+// For select
 
+Route::get('/select', [SinglePackageViewController::class, 'select'])->name('select');
+Route::get('/package/serach',[FrontendHomeController::class, 'search'])->name('package.search');
 //Tourist Select Hotel,food and bus
 
 // Route::get('/singlepackage/view/select', [SinglePackageViewSelectController::class, 'singlepackageviewselect'])->name('singlepackageview.selects');
