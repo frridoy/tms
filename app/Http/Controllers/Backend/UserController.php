@@ -35,6 +35,7 @@ class UserController extends Controller
     }
     public function logout()
     {
+        // notify()->success('Logout Sucessfully.');
         auth()->logout();
 
         return redirect()->route('admin.login');

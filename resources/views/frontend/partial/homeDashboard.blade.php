@@ -13,7 +13,7 @@
                         <img src="{{url('forntend/')}}/assets/images/slider/slid_2.jpg" class="d-block w-100"
                             alt="...">
                         <div class="detail-card">
-                            <p>Pictures, abstract symbols the ingredients with symbols the
+                            <p> Look deep into nature, and then you will understand everything better.
                             </p>
                         </div>
                     </a>
@@ -23,7 +23,7 @@
                         <img src="{{ url('forntend/') }}/assets/images/slider/slid_1.jpg" class="d-block w-100"
                             alt="...">
                         <div class="detail-card">
-                            <p>Pictures, abstract symbols the ingredients with symbols the
+                            <p>  Heaven is under our feet as well as over our heads.
                             </p>
                         </div>
                     </a>
@@ -46,8 +46,8 @@
     <div class="why-choos-us container-fluid">
         <div class="container">
             <div class="session-title">
-                <h2>Why Choos Us ?</h2>
-                <p>Sagittis vulputate magna sagittis sagittis erat feugiat nullam cubilia amet dignissim Euismod.</p>
+                <h2>Why Choose Us ?</h2>
+                <p>"Discover the epitome of quality, reliability, and customer satisfaction. Choose Us for an unparalleled service experience – where your expectations are not just met, but surpassed."- FR Ridoy</p>
             </div>
             <div class="why-ro row">
                 <div class="col-lg-4 col-md-6">
@@ -57,7 +57,7 @@
                         </div>
                         <div class="detail">
                             <h4>Easy Booking</h4>
-                            <p>Turpis accumsan. Proin id ligula suspendisse. Aliquet fringilla, aptent eu dignissim.</p>
+                            <p>Our user-friendly platform ensures a hassle-free process, allowing you to secure your reservations effortlessly.</p>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="detail">
                             <h4>Value for Money</h4>
-                            <p>Turpis accumsan. Proin id ligula suspendisse. Aliquet fringilla, aptent eu dignissim.</p>
+                            <p>"Embrace unparalleled value for money with our services, where quality meets affordability to ensure your satisfaction and savings."</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="detail">
                             <h4>Passionate Travel</h4>
-                            <p>Turpis accumsan. Proin id ligula suspendisse. Aliquet fringilla, aptent eu dignissim.</p>
+                            <p>"Embark on a journey fueled by passion with our travel experiences, where every destination becomes a canvas for unforgettable memories."</p>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="detail">
                             <h4>Awesome Places</h4>
-                            <p>Turpis accumsan. Proin id ligula suspendisse. Aliquet fringilla, aptent eu dignissim.</p>
+                            <p>"Discover the beauty of Bangladesh of wonder with Awesome Places, where each destination is a masterpiece waiting to be explored."</p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="detail">
                             <h4>Diverse Destinations</h4>
-                            <p>Turpis accumsan. Proin id ligula suspendisse. Aliquet fringilla, aptent eu dignissim.</p>
+                            <p>"Explore a world of diversity with our curated destinations, offering a tapestry of unique experiences to suit every traveler's taste."</p>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="detail">
                             <h4>24 x 7 Support</h4>
-                            <p>Turpis accumsan. Proin id ligula suspendisse. Aliquet fringilla, aptent eu dignissim.</p>
+                            <p>"Experience peace of mind with our 24x7 support, ensuring that assistance is just a call or message away, around the clock."</p>
                         </div>
                     </div>
                 </div>
@@ -121,19 +121,24 @@
         </div>
     </div>
 
-    <!-- ################# Popular Packages Starts Here #######################--->
+
+
+    <!-- ################# Our Packages Starts Here #######################--->
+
+
+
 
     <div class="popular-pack no-bgpack container-fluid">
         <div class="container">
             <div class="session-title">
                 <h2>Our Packages</h2>
-                <p>Sagittis vulputate magna sagittis sagittis erat feugiat nullam cubilia amet dignissim Euismod.</p>
+                <p>"We always strive to provide the best packages, allowing you to explore the beauty of nature at an affordable price."</p>
             </div>
             <div class="row pack-row">
               @foreach ($packages as $package )
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="pack-col">
-                    <img src="{{ url('/uploads//' . $package->image) }}" alt="">
+                    <img src="{{ url('/uploads//' . $package->image) }}" alt="" >
                     <div class="revire row no-margin">
                         <ul class="rat">
                             <li><i class="fa fa-star"></i></li>
@@ -142,15 +147,16 @@
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                         </ul>
+
                         <span class="pric">
                             {{$package->price}}.00 BDT
                         </span>
                     </div>
                     <div class="detail row no-margin">
                         <h4>{{$package->name}}</h4>
-                        <p>{{$package->description}}</p>
+                        <p> Duration: {{$package->duration}} Days</p>
                         <div class="text-center" >
-                            <button class="btn btn-outline-success mt-2 "><a href="{{route('singlepackage.view',$package->id)}}">Book Now</a></button>
+                            <button class="btn btn-outline-success mt-2 "><a href="{{route('singlepackage.view',$package->id)}}">View The Package</a></button>
                         </div>
 
 
@@ -162,6 +168,7 @@
                             <li><i class="fas fa-cocktail"></i></li>
                             <li><i class="fas fa-umbrella-beach"></i></li>
                             <li><i class="far fa-bell"></i></li>
+                            
                         </ul>
                     </div>
                 </div>

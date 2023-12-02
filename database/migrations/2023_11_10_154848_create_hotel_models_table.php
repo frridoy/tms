@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('hotel_models', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20)->unique();
-            $table->string('type',20);
-            $table->string('price');
+            $table->string('hotelname',30)->unique();
+            $table->string('hoteltype',30);
+            $table->integer('hotelprice');
             $table->timestamps();
         });
     }

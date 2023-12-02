@@ -25,9 +25,9 @@
                         <div class="col">
                           <!-- .metric -->
                           <a href="user-teams.html" class="metric metric-bordered align-items-center">
-                            <h2 class="metric-label"> Teams </h2>
+                            <h2 class="metric-label">Total Package:</h2>
                             <p class="metric-value h3">
-                              <span class="value">8</span>
+                              <span class="value"> 3 </span>
                             </p>
                           </a> <!-- /.metric -->
                         </div><!-- /metric column -->

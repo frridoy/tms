@@ -20,9 +20,9 @@ class HotelController extends Controller
 
     public function store (Request $request){
         hotel_model:: create([
-        'name'=>$request->name,
-        'type'=>$request->type,
-        'price'=>$request->price,
+            'hotelname'=>$request->hotelname,
+            'hoteltype'=>$request->hoteltype,
+            'hotelprice'=>$request->hotelprice,
         ]);
         return redirect ()->route('hotel');
     }
@@ -46,9 +46,9 @@ class HotelController extends Controller
         $items=hotel_model::find($id);
         if($items)
         $items->update([
-            'name'=>$request->name,
-            'type'=>$request->type,
-            'price'=>$request->price,
+            'hotelname'=>$request->hotelname,
+            'hoteltype'=>$request->hoteltype,
+            'hotelprice'=>$request->hotelprice,
         ]);
         return redirect()->route('hotel');
     }

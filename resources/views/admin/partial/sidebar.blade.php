@@ -62,7 +62,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="" class="menu-link"> <span class="menu-text">Manage User</span></a>
+                    <a href="" class="menu-link"> <span class="menu-text">User</span></a>
                   </li>
 
               {{-- </ul> --}}

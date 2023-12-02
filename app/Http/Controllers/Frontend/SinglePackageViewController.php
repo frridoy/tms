@@ -10,7 +10,19 @@ class SinglePackageViewController extends Controller
 {
     public function singlepackageview ($id){
         $packages=Package::all();
+        // dd ($packages->all();
         $singlepackage=Package::find($id);
+        // dd ($singlepackage->name);
        return view('frontend.pages.singlepackageview',compact('packages','singlepackage'));
     }
+
+    public function select()
+    {
+
+        return view('frontend.pages.SelectTourist.select');
+
+    }
+
+
+
 }

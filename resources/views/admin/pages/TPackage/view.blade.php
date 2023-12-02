@@ -65,17 +65,18 @@
     </div>
 
     <div class="user-info">
-        <h4> Tour Package View </h4><hr>
+        <h4>  {{$package->name}} </h4><hr>
 
-        <h6>Package Name : {{$package->name}}</h6><hr>
+
         <h6>Code : {{$package->code}}</h6><hr>
-        <h6>Duration : {{$package->duration}}</h6><hr>
-        <h6>Price: {{$package->price}}.00BDT</h6><hr>
+        <h6>Duration : {{$package->duration}} Days</h6><hr>
+        <h6>Price: {{$package->price}} BDT</h6><hr>
         <h6>Description: {{$package->description}}</h6><hr>
 
 
-        <a class="btn btn-outline-info" href="{{route('tourpackages',$package->id)}}"> Back </a>
-        <a class="btn btn-outline-warning" href="{{route('package.edit',$package->id)}}"> Edit </a> <hr>
+        <a class="btn btn-info" href="{{route('tourpackages',$package->id)}}"> Back </a>
+        <a class="btn btn-warning" href="{{route('package.edit',$package->id)}}"> Edit </a>
+        <a class="btn btn-danger" href="{{route('package.delete',$package->id)}}"> Delete</a>
 
     </div>
 

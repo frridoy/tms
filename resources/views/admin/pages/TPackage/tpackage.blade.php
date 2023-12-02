@@ -21,7 +21,7 @@
                     <th scope="row">{{ $key + 1 }}</th>
                     <td>{{ $package->name }}</td>
                     <td>{{ $package->code }}</td>
-                    <td>{{ $package->duration }}</td>
+                    <td>{{ $package->duration }} Days</td>
                     <td>{{ $package->description }}</td>
                     <td>{{ $package->price }} BDT</td>
                     <td>
@@ -36,4 +36,8 @@
             @endforeach
         </tbody>
     </table>
+    
+    <div class="w-25 mx-auto">
+        {{ $packages->links() }}
+    </div>
 @endsection

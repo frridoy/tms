@@ -14,7 +14,7 @@ class TourPackagesController extends Controller
     public function tpackage()
     {
 
-        $packages = Package::all();
+        $packages = Package::paginate(3);
         return view('admin.pages.TPackage.tpackage', compact('packages'));
     }
 
@@ -27,7 +27,7 @@ class TourPackagesController extends Controller
      if ($package){
         $package->delete();
      }
-     notify()->success('Tour Package Delete Sucessfully.');
+     notify()->success('Tour Package Deleted Sucessfully.');
      return redirect()->back();
     }
     public function view($id){
@@ -59,7 +59,7 @@ class TourPackagesController extends Controller
             'image' => $fileName
 
         ]);
-        notify()->success('Tour Package Update Sucessfully.');
+        notify()->success('Tour Package Updated Sucessfully.');
         return redirect()->route('tourpackages');
     }
 
@@ -102,7 +102,7 @@ class TourPackagesController extends Controller
             'image' => $fileName
 
         ]);
-        
+        notify()->success('Tour Package Created Sucessfully.');
         return redirect()->route('tourpackages');
     }
 }

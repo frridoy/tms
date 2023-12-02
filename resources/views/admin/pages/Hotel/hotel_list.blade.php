@@ -16,9 +16,9 @@
             @foreach ($items as $key => $item)
                 <tr>
                     <th scope="row"> {{ $key + 1 }}</th>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->type }}</td>
-                    <td>{{ $item->price }}.00 BDT</td>
+                    <td>{{ $item->hotelname }}</td>
+                    <td>{{ $item->hoteltype }}</td>
+                    <td>{{ $item->hotelprice }}.00 BDT</td>
                     <td>
                         <a href="{{route('hotel.view',$item->id)}}" class="btn btn-primary"> View </a>
                         <a href="{{route('hotel.edit',$item->id)}}" class="btn btn-warning"> Edit </a>
