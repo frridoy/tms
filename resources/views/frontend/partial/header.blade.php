@@ -19,11 +19,11 @@
 
                         @guest
                             <li class="nav-item active p-0 m-0">
-                                <a class="nav-link" href="{{route('registration')}}">Signup
+                                <a class="nav-link" href="{{route('registration')}}">Sign Up
                                 </a>
                             </li>
                             <li class="nav-item active p-0 m-0">
-                                <a class="nav-link" href="{{route('tourist.login')}}">Signin
+                                <a class="nav-link" href="{{route('tourist.login')}}">Sign In
                                 </a>
                             </li>
                         @endguest
@@ -36,14 +36,14 @@
                         @endauth
 
                             <li class="nav-item active p-0 m-0">
-                                <a class="nav-link" href="index.html">Home
+                                <a class="nav-link" href="{{url('http://127.0.0.1:8000/')}}">Home
                                 </a>
                             </li>
                             <li class="nav-item p-0 m-0">
                                 <a class="nav-link" href="about_us.html">AboutUs</a>
                             </li>
                             <li class="nav-item p-0 m-0">
-                                <a class="nav-link" href="#">Packages</a>
+                                <a class="nav-link" href="{{route('ourpackage.website')}}">Packages</a>
                             </li>
 
 
@@ -60,7 +60,7 @@
 
                 <div class="container mt-0 col-md-2 justify-content-end mr-0 p-0 m-0 mb-0">
                     <div class="row justify-content-end">
-                      <div class="col-md-12">
+                      <div class="col-md-14">
                         <form action="{{ route('package.search') }}" method="get" class="form-inline">
                           <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search Packages..." name="search">

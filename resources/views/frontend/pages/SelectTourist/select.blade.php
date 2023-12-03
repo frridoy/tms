@@ -102,6 +102,17 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="foodmenu" name="foodmenuselect" class="font-weight-bold">Food Menu Select</label>
+                                    <div class="input-group">
+                                        <select class="custom-select form-control border-0 bg-light" id="roomNumber">
+                                            <option selected disabled>Food Menu...</option>
+                                            <option>Bread,Rice,</option>
+                                            <option>Rice,</option>
+                                            <!-- Add more room options as needed -->
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="quantity" class="font-weight-bold">Quantity</label>

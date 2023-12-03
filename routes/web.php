@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\TouristController;
 use App\Http\Controllers\Frontend\SinglePackageViewController;
 use App\Http\Controllers\Frontend\SinglePackageViewSelectController;
+use App\Http\Controllers\FrontendOurPackageController;
 use Illuminate\Support\Manager;
 
 // Route::get('/', function () {
@@ -44,14 +45,16 @@ Route::post('/login',[TouristController::class,'doLogin'])->name('tourist.do.log
 
 Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
-// For select
+// For Tourist select
 
 Route::get('/select', [SinglePackageViewController::class, 'select'])->name('select');
 Route::get('/package/serach',[FrontendHomeController::class, 'search'])->name('package.search');
+
 //Tourist Select Hotel,food and bus
 
 // Route::get('/singlepackage/view/select', [SinglePackageViewSelectController::class, 'singlepackageviewselect'])->name('singlepackageview.selects');
 
+Route::get('/ourpackage',[FrontendOurPackageController::class, 'ourpackage'])->name('ourpackage.website');
 
 Route::group(['middleware'=>'auth'],function(){
 

@@ -1,20 +1,20 @@
 @extends('frontend.master')
 @section('content')
 
-{{-- <h2>Search result for : {{ request()->search }} found {{$packages->count()}} packages.</h2>
-<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-
-@if($packages->count()>0)
-    @foreach ($packages as $package) --}}
-
-
-
-
 <div class="popular-pack no-bgpack container-fluid">
     <div class="container">
         <div class="session-title">
-            <h2> Our Packages </h2>
-                <h4> Your Search Result: {{ request()->search }} matched with {{$packages->count()}} Package !</h4>
+
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+
+                            <h4 class="font-weight-bold text-success mb-4"> Your Search Result: {{ request()->search }} matched with {{$packages->count()}} Package !</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
 @if($packages->count()>0)
@@ -72,7 +72,7 @@
 
 @else
 
-    <h1>No Package Matched!</h1>
+<h2 class="font-weight-bold text-danger mb-4">No Package found!!!</h2>
 
 @endif
 
