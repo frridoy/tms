@@ -11,4 +11,8 @@ class FrontendOurPackageController extends Controller
         $packages = Package::all();
         return view('frontend.pages.ourpackage', compact('packages'));
     }
+    public function aboutus (){
+        // $packages = Package::all();
+        return view('frontend.pages.aboutus');
+    }
 }

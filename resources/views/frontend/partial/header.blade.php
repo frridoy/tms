@@ -36,11 +36,11 @@
                         @endauth
 
                             <li class="nav-item active p-0 m-0">
-                                <a class="nav-link" href="{{url('http://127.0.0.1:8000/')}}">Home
+                                <a class="nav-link" href="{{route('home')}}">Home
                                 </a>
                             </li>
                             <li class="nav-item p-0 m-0">
-                                <a class="nav-link" href="about_us.html">AboutUs</a>
+                                <a class="nav-link" href="{{route('aboutus.website')}}">AboutUs</a>
                             </li>
                             <li class="nav-item p-0 m-0">
                                 <a class="nav-link" href="{{route('ourpackage.website')}}">Packages</a>

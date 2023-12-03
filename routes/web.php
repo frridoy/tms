@@ -54,7 +54,10 @@ Route::get('/package/serach',[FrontendHomeController::class, 'search'])->name('p
 
 // Route::get('/singlepackage/view/select', [SinglePackageViewSelectController::class, 'singlepackageviewselect'])->name('singlepackageview.selects');
 
+//Route for our package, About Us and Contact Us
+
 Route::get('/ourpackage',[FrontendOurPackageController::class, 'ourpackage'])->name('ourpackage.website');
+Route::get('/aboutus',[FrontendOurPackageController::class, 'aboutus'])->name('aboutus.website');
 
 Route::group(['middleware'=>'auth'],function(){
 
