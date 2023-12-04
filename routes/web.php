@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\ManageBookingController;
 use App\Http\Controllers\Backend\ManagePagesController;
 use App\Http\Controllers\Backend\SpotController;
 use App\Http\Controllers\Backend\TransportController;
+use App\Http\Controllers\Backend\UserroleController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\TouristController;
 use App\Http\Controllers\Frontend\SinglePackageViewController;
@@ -42,14 +43,13 @@ Route::post('/registration', [TouristController::class, 'store'])->name('registr
 Route::get('/login', [TouristController::class, 'login'])->name('tourist.login');
 Route::post('/login', [TouristController::class, 'doLogin'])->name('tourist.do.login');
 
-//website single package view
 
-Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
 // For Tourist select form
 
 Route::get('/select', [SinglePackageViewController::class, 'select'])->name('select');
 
+Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
 //website from to admin list
 
@@ -68,6 +68,16 @@ Route::get('/ourpackage', [FrontendOurPackageController::class, 'ourpackage'])->
 Route::get('/aboutus', [FrontendOurPackageController::class, 'aboutus'])->name('aboutus.website');
 
 Route::group(['middleware' => 'auth'], function () {
+
+
+
+
+        // Other routes that require authentication
+
+
+        //website single package view
+
+// Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
 
 
@@ -144,6 +154,11 @@ Route::group(['prefix' => 'admin'], function () {
         // Route::get('/tourist/booking',[BookingController::class,'touristbooking'])->name('tourist.booking');
         // Route::get('/tourist/booking/form',[BookingController::class,'create'])->name('touristbooking.form');
         // Route::post('/tourist/booking/form/store',[BookingController::class,'store'])->name('tourist..store');
+
+        //For User Role
+        Route::get('/user/role',[UserController::class, 'userrole'])->name('user.role');
+        Route::get('/user/role/form',[UserController::class, 'create'])->name('userrole.form');
+        Route::post('/user/role/form/store',[UserController::class, 'store'])->name('userrole.store');
 
 
         //Admin_Profile

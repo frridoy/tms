@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -39,5 +40,50 @@ class UserController extends Controller
         auth()->logout();
 
         return redirect()->route('admin.login');
+    }
+
+
+    // role
+
+    public function userrole (){
+        $items=User::paginate();
+        return view('admin.pages.UserRole.list',compact ('items'));
+    }
+    public function create(){
+        return view('admin.pages.UserRole.form');
+    }
+    public function store (Request $request){
+        //validator
+        $validate=Validator::make($request->all(),[
+            'name'=>'required',
+            'role'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            // 'image'=>'required',
+        ]);
+
+        if($validate->fails())
+        {
+            return redirect()->back()->with('myError',$validate->getMessageBag());
+        }
+        //end validator
+//for image
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+
+        }
+        User::create([
+            'name'=>$request->name,
+            'role'=>$request->role,
+            'email'=>$request->email,
+            'password'=>bcrypt($request->password),
+            'image'=> $fileName
+        ]);
+        notify()->success('User Role Created Sucessfully.');
+        return redirect()->route('user.role');
     }
 }
