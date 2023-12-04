@@ -10,15 +10,17 @@
                         <div class="col-md-12 text-center">
 
                             <h4 class="font-weight-bold text-success mb-4"> Your Search Result: {{ request()->search }} matched with {{$packages->count()}} Package !</h4>
-                            
+
                         </div>
                     </div>
                 </div>
 
 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-@if($packages->count()>0)
-    @foreach ($packages as $package)
+@if ($packages->count() > 0)
+
+{{-- problem solution --}}
+     {{-- @foreach ($packages as $package) --}}
 
         </div>
         <div class="row pack-row">
@@ -68,7 +70,8 @@
     </div>
 </div>
 
-@endforeach
+{{-- problem solution--}}
+{{-- @endforeach --}}
 
 @else
 
@@ -79,3 +82,15 @@
 
 </div>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+

@@ -77,7 +77,6 @@ Route::group(['middleware' => 'auth'], function () {
 
         //website single package view
 
-// Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
 
 

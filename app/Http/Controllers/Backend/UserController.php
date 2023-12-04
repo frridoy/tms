@@ -46,7 +46,7 @@ class UserController extends Controller
     // role
 
     public function userrole (){
-        $items=User::paginate();
+        $items=User::paginate(5);
         return view('admin.pages.UserRole.list',compact ('items'));
     }
     public function create(){
