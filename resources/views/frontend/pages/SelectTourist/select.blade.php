@@ -46,6 +46,8 @@
     <body>
 
         <div class="container mt-5">
+            <form action="{{ route('tourist.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
@@ -75,7 +77,7 @@
                                                 <i class="fas fa-phone"></i>
                                             </span>
                                         </div>
-                                        <input type="number"name="contactnumber" class="form-control" id="contact"
+                                        <input type="number"name="number" class="form-control" id="contact"
                                             placeholder="Enter your contact number">
                                     </div>
                                 </div>
@@ -92,25 +94,26 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="roomNumber" name="chooseroom" class="font-weight-bold">Choose Room</label>
+                                    <label for="chooseroom" name="chooseroom" class="font-weight-bold">Choose Room</label>
                                     <div class="input-group">
-                                        <select class="custom-select form-control border-0 bg-light" id="roomNumber">
+                                        <select name="chooseroom" class="custom-select form-control border-0 bg-light" id="roomNumber">
                                             <option selected disabled>Select Room...</option>
                                             <option>Single Bed</option>
                                             <option>Double Bed</option>
-                                            <!-- Add more room options as needed -->
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="foodmenu" name="foodmenuselect" class="font-weight-bold">Food Menu Select</label>
+                                    <label for="choosefoodmenu" name="choosefoodmenu" class="font-weight-bold">Choose Food Menu</label>
                                     <div class="input-group">
-                                        <select class="custom-select form-control border-0 bg-light" id="roomNumber">
+                                        <select name="choosefoodmenu" class="choosefoodmenu custom-select form-control border-0 bg-light" id="roomNumber">
                                             <option selected disabled>Food Menu...</option>
-                                            <option>Bread,Rice,</option>
-                                            <option>Rice,</option>
-                                            <!-- Add more room options as needed -->
+                                            <option>Rice</option>
+                                            <option>dfgh</option>
+                                            <!-- Add more options as needed -->
                                         </select>
+
                                     </div>
                                 </div>
 
@@ -132,6 +135,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
