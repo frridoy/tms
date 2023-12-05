@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 {{-- <a href="{{ route('touristbooking.form') }}" class="btn btn-primary mb-4 mt-4"> Tourist Reservation Form </a> --}}
-
+ <h2> Tourist Booking List </h2>
 <table class="table">
     <thead>
       <tr>

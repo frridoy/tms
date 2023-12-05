@@ -29,7 +29,7 @@
                         {{-- <a href="{{route('package.view',$package->id)}}"class="btn btn-primary">View</a>
                         <a href="{{route('package.edit',$package->id)}}"class="btn btn-warning">Edit</a>
                         <a href="{{route('package.delete',$package->id)}}"class="btn btn-danger">Delete</a> --}}
-                        <a href=""class="btn btn-danger">View</a>
+                        <a href=""class="btn btn-info">View</a>
                     </td>
                    </tr>
 @endforeach

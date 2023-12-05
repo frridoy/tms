@@ -48,7 +48,7 @@
 
 
                             <li class="nav-item p-0 m-0">
-                                <a class="nav-link" href="contact_us.html">ContactUs</a>
+                                <a class="nav-link" href="{{route('contactus.website')}}">ContactUs</a>
                             </li>
 
                         </ul>

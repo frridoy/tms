@@ -12,7 +12,10 @@ class FrontendOurPackageController extends Controller
         return view('frontend.pages.ourpackage', compact('packages'));
     }
     public function aboutus (){
-        // $packages = Package::all();
+
         return view('frontend.pages.aboutus');
+    }
+    public function contactus(){
+        return view('frontend.pages.contactus');
     }
 }

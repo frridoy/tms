@@ -62,11 +62,15 @@
                 </li>
 
                 <li class="menu-item">
-                    <a href="{{route('tourist.booking')}}" class="menu-link"> <span class="menu-text">Booking</span></a>
+                    <a href="{{route('tourist.booking')}}" class="menu-link"> <span class="menu-text">Tourist Booking</span></a>
                   </li>
 
                   <li class="menu-item">
                     <a href="{{route('user.role')}}" class="menu-link"> <span class="menu-text">User</span></a>
+                  </li>
+
+                  <li class="menu-item">
+                    <a href="{{route('home')}}" class="menu-link"> <span class="menu-text">Website</span></a>
                   </li>
 
               {{-- </ul> --}}

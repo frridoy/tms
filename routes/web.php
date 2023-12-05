@@ -66,7 +66,9 @@ Route::get('/package/serach', [FrontendHomeController::class, 'search'])->name('
 
 Route::get('/ourpackage', [FrontendOurPackageController::class, 'ourpackage'])->name('ourpackage.website');
 Route::get('/aboutus', [FrontendOurPackageController::class, 'aboutus'])->name('aboutus.website');
+Route::get('/contactus', [FrontendOurPackageController::class, 'contactus'])->name('contactus.website');
 
+//for website middleware
 Route::group(['middleware' => 'auth'], function () {
 
 
@@ -102,6 +104,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
     Route::group(['middleware' => 'auth'], function () {
+        Route::group(['middleware'=>'CheckAdmin'], function(){
 
         Route::get("/logout", [UserController::class, 'logout'])->name('admin.logout');
         Route::get("/", [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -162,5 +165,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         //Admin_Profile
         Route::get('/myprofile', [AdminProfileController::class, 'adminprofile'])->name('adminprofile');
+        });
     });
+
 });
+
+
