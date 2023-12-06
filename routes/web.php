@@ -58,6 +58,9 @@ Route::get('/tourist/booking',[SinglePackageViewController::class,'touristbookin
 Route::get('/tourist/booking/form',[SinglePackageViewController::class,'create'])->name('touristbooking.form');
 Route::post('/tourist/booking/form/store',[SinglePackageViewController::class,'store'])->name('tourist.store');
 
+//for tourist
+Route::get('/tourist/booking/search',[SinglePackageViewController::class,'search'])->name('touristbooking.search');
+
  //tourist Profile
  Route::get('/tourist/profile',[TouristProfileController::class,'touristprofile'])->name('tourist.profile');
  Route::get('/tourist/profile/edit/{id}',[TouristProfileController::class,'touristprofileedit'])->name('touristprofile.edit');

@@ -51,6 +51,23 @@ class SinglePackageViewController extends Controller
         return redirect()->route('home');
     }
 
+    public function search(Request $request)
+    {
+
+        if ($request->search) {
+            $searchTerm = $request->search;
+            $bookings = bookingmodel::where('name', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('code', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('quantity', 'LIKE', '%' . $searchTerm . '%')
+                ->get();
+        } else {
+            $bookings = bookingmodel::all();
+        }
+
+
+        return view('admin.pages.Booking.search',compact('bookings'));
+    }
+
 
 
 }
