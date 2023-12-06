@@ -18,6 +18,7 @@ use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\TouristController;
 use App\Http\Controllers\Frontend\SinglePackageViewController;
 use App\Http\Controllers\Frontend\SinglePackageViewSelectController;
+use App\Http\Controllers\Frontend\TouristProfileController;
 use App\Http\Controllers\FrontendOurPackageController;
 use Illuminate\Support\Manager;
 
@@ -57,7 +58,8 @@ Route::get('/tourist/booking',[SinglePackageViewController::class,'touristbookin
 Route::get('/tourist/booking/form',[SinglePackageViewController::class,'create'])->name('touristbooking.form');
 Route::post('/tourist/booking/form/store',[SinglePackageViewController::class,'store'])->name('tourist.store');
 
-
+ //tourist Profile
+ Route::get('/tourist/profile',[TouristProfileController::class,'touristprofile'])->name('tourist.profile');
 
 Route::get('/package/serach', [FrontendHomeController::class, 'search'])->name('package.search');
 
@@ -85,6 +87,7 @@ Route::group(['middleware' => 'auth'], function () {
     //route for tourist logout
 
     Route::get('/logout', [TouristController::class, 'logout'])->name('tourist.logout');
+
 });
 
 

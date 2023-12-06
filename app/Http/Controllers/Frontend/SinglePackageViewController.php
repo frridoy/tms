@@ -38,8 +38,8 @@ class SinglePackageViewController extends Controller
         // dd($request->all());
 
         bookingmodel::create([
-            'name' => $request->name,
-            'email' => $request->email,
+            'name' => auth()->user()->name,
+            'email' => auth()->user()->email,
             'number' => $request->number,
             'address' => $request->address,
             'code' => $request->code,

@@ -25,7 +25,7 @@
                         <div class="col">
                           <!-- .metric -->
                           <a href="user-teams.html" class="metric metric-bordered align-items-center">
-                            <h2 class="metric-label">Total Package:</h2>
+                            <h2 class="metric-label">Total Package</h2>
                             <p class="metric-value h3">
                               <span class="value"> 3 </span>
                             </p>
@@ -35,9 +35,9 @@
                         <div class="col">
                           <!-- .metric -->
                           <a href="user-projects.html" class="metric metric-bordered align-items-center">
-                            <h2 class="metric-label"> Projects </h2>
+                            <h2 class="metric-label"> Total User </h2>
                             <p class="metric-value h3">
-                           <span class="value">12</span>
+                           <span class="value">6</span>
                             </p>
                           </a> <!-- /.metric -->
                         </div><!-- /metric column -->
@@ -45,22 +45,15 @@
                         <div class="col">
                           <!-- .metric -->
                           <a href="user-tasks.html" class="metric metric-bordered align-items-center">
-                            <h2 class="metric-label"> Active Tasks </h2>
+                            <h2 class="metric-label"> Total Booking </h2>
                             <p class="metric-value h3">
-                             <span class="value">64</span>
+                             <span class="value">12</span>
                             </p>
                           </a> <!-- /.metric -->
                         </div><!-- /metric column -->
                       </div>
                     </div><!-- metric column -->
-                    <div class="col-lg-3">
-                      <!-- .metric -->
-                      <a href="user-tasks.html" class="metric metric-bordered">
-                      <h2 class="metric-label"> Total Events </h2>
-                        <p class="metric-value h3">
-                        <span class="value">8</span>
-                        </p>
-                      </a> <!-- /.metric -->
+                    <!-- /.metric -->
                     </div><!-- /metric column -->
                   </div><!-- /metric row -->
                 </div><!-- /.section-block -->

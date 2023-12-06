@@ -2,6 +2,22 @@
 @section('content')
 {{-- <a href="{{ route('touristbooking.form') }}" class="btn btn-primary mb-4 mt-4"> Tourist Reservation Form </a> --}}
  <h2> Tourist Booking List </h2>
+ {{-- for searchb start --}}
+ {{-- <div class="container mt-0 col-md-2 justify-content-end mr-0 p-0 m-0 mb-0">
+    <div class="row justify-content-end">
+      <div class="col-md-24">
+        <form action="" method="get" class="form-inline">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Packages Code" name="search">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-success">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div> --}}
+{{-- end search --}}
 <table class="table">
     <thead>
       <tr>

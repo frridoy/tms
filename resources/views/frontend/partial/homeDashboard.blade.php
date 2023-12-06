@@ -9,24 +9,24 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <a href="single.html">
+
                         <img src="{{url('forntend/')}}/assets/images/slider/slid_2.jpg" class="d-block w-100"
                             alt="...">
                         <div class="detail-card">
                             <p> Look deep into nature, and then you will understand everything better.
                             </p>
                         </div>
-                    </a>
+
                 </div>
                 <div class="carousel-item">
-                    <a href="single.html">
+                    
                         <img src="{{ url('forntend/') }}/assets/images/slider/slid_1.jpg" class="d-block w-100"
                             alt="...">
                         <div class="detail-card">
                             <p>  Heaven is under our feet as well as over our heads.
                             </p>
                         </div>
-                    </a>
+
                 </div>
 
             </div>
@@ -168,7 +168,7 @@
                             <li><i class="fas fa-cocktail"></i></li>
                             <li><i class="fas fa-umbrella-beach"></i></li>
                             <li><i class="far fa-bell"></i></li>
-                            
+
                         </ul>
                     </div>
                 </div>

@@ -58,7 +58,7 @@
                         <div class="card-body">
                             <form action="" method="" enctype="multipart/form-data">
                                 @csrf
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="name" class="font-weight-bold">Name</label>
                                     <input type="name" name="name" class="form-control" id="name"
                                         placeholder="Enter your name">
@@ -67,7 +67,7 @@
                                     <label for="email" class="font-weight-bold">Email</label>
                                     <input type="email" name="email" class="form-control" id="email"
                                         placeholder="Enter your email">
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group">
                                     <label for="contact" class="font-weight-bold">Contact Number</label>
@@ -89,7 +89,7 @@
 
                                 <div class="form-group">
                                     <label for="code" class="font-weight-bold">Package Code</label>
-                                    <input type="code"name="code" class="form-control" id="email"
+                                    <input type="code"name="code" class="form-control" id=""
                                         placeholder="Your Package Code">
                                 </div>
 
