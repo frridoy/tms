@@ -71,12 +71,9 @@
 
 
         <h6>Email: {{auth()->user()->email}}</h6><hr>
-        <h6></h6><hr>
 
 
-
-
-        <a class="btn btn-warning" href=""> Edit </a>
+        <a class="btn btn-outline-warning" href="{{route('touristprofile.edit', auth()->user()->id)}}"> Edit </a>
 
     </div>
 

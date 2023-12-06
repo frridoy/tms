@@ -37,7 +37,7 @@ Route::get('/', [FrontendHomeController::class, 'home'])->name('home');
 // route for tourist registration
 
 Route::get('/registration', [TouristController::class, 'registration'])->name('registration');
-Route::post('/registration', [TouristController::class, 'store'])->name('registration.store');
+Route::post('/registration/store', [TouristController::class, 'store'])->name('registration.store');
 
 //route for tourist login
 
@@ -60,7 +60,11 @@ Route::post('/tourist/booking/form/store',[SinglePackageViewController::class,'s
 
  //tourist Profile
  Route::get('/tourist/profile',[TouristProfileController::class,'touristprofile'])->name('tourist.profile');
+ Route::get('/tourist/profile/edit/{id}',[TouristProfileController::class,'touristprofileedit'])->name('touristprofile.edit');
+ Route::put('/tourist/profile/update/{id}',[TouristProfileController::class,'touristprofileupdate'])->name('touristprofile.update');
 
+
+ //for package serach
 Route::get('/package/serach', [FrontendHomeController::class, 'search'])->name('package.search');
 
 

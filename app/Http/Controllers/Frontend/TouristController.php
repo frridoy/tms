@@ -23,7 +23,7 @@ class TouristController extends Controller
             'password'=>bcrypt($request->password),
         ]);
         // dd($request->all());
-        // notify()->success('Customer Registration successful.');
+        notify()->success('Registration Successful.');
         return redirect()->route('tourist.login');
     }
 
@@ -43,7 +43,7 @@ class TouristController extends Controller
 
         if($val->fails())
         {
-            // notify()->error($val->getMessageBag());
+            notify()->error($val->getMessageBag());
             return redirect()->back();
         }
 
@@ -52,11 +52,11 @@ class TouristController extends Controller
 
         if(auth()->attempt($credentials))
         {
-            // notify()->success('Login Success.');
+            notify()->success('Login Success.');
             return redirect()->route('home');
         }
 
-        // notify()->error('Invalid Credentials.');
+        notify()->error('Invalid Credentials.');
             return redirect()->back();
 
 
@@ -66,7 +66,7 @@ class TouristController extends Controller
     public function logout()
     {
         auth()->logout();
-        // notify()->success('Logout Success.');
+        notify()->success('Logout Success.');
         return redirect()->route('home');
     }
 }
