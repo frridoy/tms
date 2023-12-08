@@ -59,6 +59,11 @@ class SinglePackageViewController extends Controller
             $bookings = bookingmodel::where('name', 'LIKE', '%' . $searchTerm . '%')
                 ->orWhere('code', 'LIKE', '%' . $searchTerm . '%')
                 ->orWhere('quantity', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('number', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('chooseroom', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('choosefoodmenu', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('email', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('address', 'LIKE', '%' . $searchTerm . '%')
                 ->get();
         } else {
             $bookings = bookingmodel::all();

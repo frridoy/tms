@@ -92,31 +92,6 @@
                                     <input type="code"name="code" class="form-control" id=""
                                         placeholder="Your Package Code">
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="chooseroom" name="chooseroom" class="font-weight-bold">Choose Room</label>
-                                    <div class="input-group">
-                                        <select name="chooseroom" class="custom-select form-control border-0 bg-light" id="roomNumber">
-                                            <option selected disabled>Select Room...</option>
-                                            <option>Single Bed</option>
-                                            <option>Double Bed</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="choosefoodmenu" name="choosefoodmenu" class="font-weight-bold">Choose Food Menu</label>
-                                    <div class="input-group">
-                                        <select name="choosefoodmenu" class="choosefoodmenu custom-select form-control border-0 bg-light" id="roomNumber">
-                                            <option selected disabled>Food Menu...</option>
-                                            <option>Rice</option>
-                                            <option>dfgh</option>
-                                            <!-- Add more options as needed -->
-                                        </select>
-
-                                    </div>
-                                </div>
-
                                 <div class="form-group">
                                     <label for="quantity" class="font-weight-bold">Quantity</label>
                                     <div class="input-group">
@@ -128,6 +103,37 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="chooseroom" name="chooseroom" class="font-weight-bold">Choose Room</label>
+                                    <div class="input-group">
+                                        <select name="chooseroom" class="custom-select form-control border-0 bg-light" id="roomNumber">
+                                            <option selected disabled>Select Room...</option>
+                                            <option>Single Bed for single person</option>
+                                            <option>Double Bed for couple</option>
+                                            <option>If Quantity more than 2 then select this one.</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="choosefoodmenu" name="choosefoodmenu" class="font-weight-bold">Choose Food Menu</label>
+                                    <div class="input-group">
+                                        <select name="choosefoodmenu" class="choosefoodmenu custom-select form-control border-0 bg-light" id="roomNumber">
+                                            <option selected disabled>Food Menu...</option>
+                                            <option>Pure Vagetarian</option>
+                                            <option>non-vagetarian without Beef</option>
+                                            <option>non-vagetarian without Chicken</option>
+                                            <option>non-vagetarian without Mutton</option>
+                                            <option>non-vagetarian without Fish</option>
+                                            <option>Non-Vagetarian</option>
+                                            <!-- Add more options as needed -->
+                                        </select>
+
+                                    </div>
+                                </div>
+
+
 
                                 <button type="submit" class="btn btn-primary btn-block">Book Now </button>
                             </form>

@@ -7,7 +7,11 @@
     <div class="row justify-content-end">
       <div class="col-md-24">
         <form action="{{route('touristbooking.search')}}" method="get" class="form-inline">
-          <div class="input-group">
+          <div class="input-group" style="position: relative;
+          left: 952px;
+          bottom: 43px;
+          width: 34em;
+      } ">
             <input type="text" class="form-control" placeholder="Search..." name="search">
             <div class="input-group-append">
               <button type="submit" class="btn btn-success">Search</button>
@@ -47,7 +51,9 @@
         <td>{{$booking->quantity}}</td>
         <td>
 
-            <a href="" class="btn btn-info">View</a>
+            <a href="" class="btn btn-info">View It</a>
+            <a href="" class="btn btn-primary">Edit Its</a>
+            <a href="" class="btn btn-danger">Delete</a>
         </td>
       </tr>
      @endforeach
