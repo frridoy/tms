@@ -15,7 +15,7 @@ class TouristProfileController extends Controller
         $touristprofileval=User::find($id);
         return view('frontend.pages.TouristProfile.editprofile',compact('touristprofileval'));
     }
-    
+
     public function touristprofileupdate(Request $request, $id){
         $touristprofileval=User::find($id);
         if($touristprofileval)
@@ -26,6 +26,7 @@ class TouristProfileController extends Controller
             'password'=>$request->password
 
         ]);
+        notify()->success('Profile Updated Sucessfully.');
         return redirect()->route('home');
     }
 }

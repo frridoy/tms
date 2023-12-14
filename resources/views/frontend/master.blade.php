@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    @notifyCss
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Tourism Management System   | FR Ridoy</title>
@@ -13,6 +14,12 @@
     <link rel="stylesheet" href="{{url('forntend/')}}/assets/css/all.min.css">
     <link rel="stylesheet" href="{{url('forntend/')}}/assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="{{url('forntend/')}}/assets/css/style.css" />
+    <style>
+        .notify {
+        z-index: 9999;
+        justify-content: center;
+        }
+        </style>
 </head>
 
     <body>
@@ -26,6 +33,23 @@
      <!--  ************************* Footer Start Here ************************** -->
  @include('frontend.partial.footer')
 
+
+ @notifyJs
+
+ {{-- for ssl script --}}
+ <script>
+    (function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+            tag.parentNode.insertBefore(script, tag);
+        };
+
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
+</script>
+
+{{-- end ssl --}}
 
 
 

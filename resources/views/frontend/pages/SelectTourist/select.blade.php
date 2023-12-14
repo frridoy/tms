@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-<br>
+<br> <br>
 
     <!DOCTYPE html>
     <html lang="en">
@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <title>Gorgeous Form</title>
+
         <style>
             body {
                 background-color: #f8f9fa;
@@ -58,16 +58,16 @@
                         <div class="card-body">
                             <form action="" method="" enctype="multipart/form-data">
                                 @csrf
-                                {{-- <div class="form-group">
+                                <div class="form-group">
                                     <label for="name" class="font-weight-bold">Name</label>
-                                    <input type="name" name="name" class="form-control" id="name"
+                                    <input type="name" name="name" required class="form-control" id="name"
                                         placeholder="Enter your name">
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="font-weight-bold">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email"
+                                    <input type="email" required name="email" class="form-control" id="email"
                                         placeholder="Enter your email">
-                                </div> --}}
+                                </div>
 
                                 <div class="form-group">
                                     <label for="contact" class="font-weight-bold">Contact Number</label>
@@ -77,14 +77,14 @@
                                                 <i class="fas fa-phone"></i>
                                             </span>
                                         </div>
-                                        <input type="number"name="number" class="form-control" id="contact"
+                                        <input type="number"name="number" required class="form-control" id="contact"
                                             placeholder="Enter your contact number">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="address" class="font-weight-bold">Address</label>
-                                    <textarea class="form-control" name="address" id="address" rows="1" placeholder="Enter your address"></textarea>
+                                    <textarea class="form-control" required name="address" id="address" rows="1" placeholder="Enter your address"></textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -95,7 +95,7 @@
                                 <div class="form-group">
                                     <label for="quantity" class="font-weight-bold">Quantity</label>
                                     <div class="input-group">
-                                        <input type="number" name="quantity" class="form-control border-0 bg-light"
+                                        <input type="number" required name="quantity" class="form-control border-0 bg-light"
                                             id="quantity" placeholder="Enter quantity" aria-describedby="quantity-addon">
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-primary text-white"
@@ -107,11 +107,11 @@
                                 <div class="form-group">
                                     <label for="chooseroom" name="chooseroom" class="font-weight-bold">Choose Room</label>
                                     <div class="input-group">
-                                        <select name="chooseroom" class="custom-select form-control border-0 bg-light" id="roomNumber">
+                                        <select name="chooseroom" required class="custom-select form-control border-0 bg-light" id="roomNumber">
                                             <option selected disabled>Select Room...</option>
                                             <option>Single Bed for single person</option>
                                             <option>Double Bed for couple</option>
-                                            <option>If Quantity more than 2 then select this one.</option>
+                                            <option>If Quantity more than 2 and odd number then select this one.</option>
 
                                         </select>
                                     </div>
@@ -119,7 +119,7 @@
                                 <div class="form-group">
                                     <label for="choosefoodmenu" name="choosefoodmenu" class="font-weight-bold">Choose Food Menu</label>
                                     <div class="input-group">
-                                        <select name="choosefoodmenu" class="choosefoodmenu custom-select form-control border-0 bg-light" id="roomNumber">
+                                        <select name="choosefoodmenu" required class="choosefoodmenu custom-select form-control border-0 bg-light" id="roomNumber">
                                             <option selected disabled>Food Menu...</option>
                                             <option>Pure Vagetarian</option>
                                             <option>non-vagetarian without Beef</option>
@@ -135,7 +135,13 @@
 
 
 
-                                <button type="submit" class="btn btn-primary btn-block">Book Now </button>
+                                <button type="submit" class="btn btn-primary btn-block">Submit </button>
+
+                               {{-- <button> <a href="{{route('make.payment')}}"class="btn btn-primary btn-block">Make Payment</a> </button> --}}
+
+                               {{-- <a class="btn btn-primary" href="{{route('maketourist.payment',auth()->user()->id)}}" role="button">Book Now</a> --}}
+
+
                             </form>
                         </div>
                     </div>

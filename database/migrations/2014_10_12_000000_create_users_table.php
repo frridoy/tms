@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+// ssl
+            $table->string('member_subscription')->nullable();
+            $table->integer('limit')->nullable();
         });
     }
 

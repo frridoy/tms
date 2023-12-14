@@ -10,8 +10,13 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
 
-                        <img src="{{url('forntend/')}}/assets/images/slider/slid_2.jpg" class="d-block w-100"
+                        {{-- <img src="{{url('forntend/')}}/assets/images/slider/slid_2.jpg" class="d-block w-100"
+                            alt="..."> --}}
+                            
+                            <img src="https://i.ibb.co/rGjncd3/410268422-259213183836550-226005397833665863-n.jpg" class="d-block w-100"
                             alt="...">
+
+
                         <div class="detail-card">
                             <p> Look deep into nature, and then you will understand everything better.
                             </p>
@@ -19,7 +24,7 @@
 
                 </div>
                 <div class="carousel-item">
-                    
+
                         <img src="{{ url('forntend/') }}/assets/images/slider/slid_1.jpg" class="d-block w-100"
                             alt="...">
                         <div class="detail-card">

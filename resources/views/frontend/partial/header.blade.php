@@ -5,7 +5,8 @@
             <div class="row nav-row align-items-center justify-content-between" >
                 <div class="col-lg-2 col-md-2 logo">
                     <a href="...">
-                        <img src="{{url('forntend/')}}/assets/images/logo.png" alt="">
+                        {{-- <img src="{{url('forntend/')}}/assets/images/logo.png" alt=""> --}}
+                        {{-- for logo --}}
                         <a data-toggle="collapse" data-target="#menu" href="..."><i class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
                     </a>
 
@@ -36,6 +37,11 @@
                         <li class="nav-item p-0 m-0">
                             <a class="nav-link" href="{{route('tourist.profile')}}">My Profile</a>
                         </li>
+
+                        <li class="nav-item p-0 m-0">
+                            <a class="nav-link" href="">Booking Details</a>
+                        </li>
+
                         @endauth
 
                             <li class="nav-item active p-0 m-0">

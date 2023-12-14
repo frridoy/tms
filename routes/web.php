@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controller\SslCommerzPaymentController as ControllerSslCommerzPaymentController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BookingController;
 use App\Http\Controllers\Backend\UserController;
@@ -20,6 +21,8 @@ use App\Http\Controllers\Frontend\SinglePackageViewController;
 use App\Http\Controllers\Frontend\SinglePackageViewSelectController;
 use App\Http\Controllers\Frontend\TouristProfileController;
 use App\Http\Controllers\FrontendOurPackageController;
+
+use App\Http\Controllers\SslCommerzPaymentController;
 use Illuminate\Support\Manager;
 
 // Route::get('/', function () {
@@ -50,13 +53,20 @@ Route::post('/login', [TouristController::class, 'doLogin'])->name('tourist.do.l
 
 Route::get('/select', [SinglePackageViewController::class, 'select'])->name('select');
 
+//for make payment
+
+Route::get('/make/payment', [SinglePackageViewController::class, 'makepayment'])->name('make.payment');
+
 Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
-//website from to admin list
+//website reservation from to admin list
 
 Route::get('/tourist/booking',[SinglePackageViewController::class,'touristbooking'])->name('tourist.booking');
 Route::get('/tourist/booking/form',[SinglePackageViewController::class,'create'])->name('touristbooking.form');
 Route::post('/tourist/booking/form/store',[SinglePackageViewController::class,'store'])->name('tourist.store');
+
+//for ssl call
+Route::get('/making/payment/{id}',[SinglePackageViewController::class, 'makingpayment'])->name('maketourist.payment');
 
 //for tourist
 Route::get('/tourist/booking/search',[SinglePackageViewController::class,'search'])->name('touristbooking.search');
@@ -66,18 +76,23 @@ Route::get('/tourist/booking/search',[SinglePackageViewController::class,'search
  Route::get('/tourist/profile/edit/{id}',[TouristProfileController::class,'touristprofileedit'])->name('touristprofile.edit');
  Route::put('/tourist/profile/update/{id}',[TouristProfileController::class,'touristprofileupdate'])->name('touristprofile.update');
 
+ //for see the tourist booking info
+
+
+
 
  //for package serach
 Route::get('/package/serach', [FrontendHomeController::class, 'search'])->name('package.search');
 
 
-//Route for our package, About Us and Contact Us
+//Route for our Package, About Us and Contact Us
 
 Route::get('/ourpackage', [FrontendOurPackageController::class, 'ourpackage'])->name('ourpackage.website');
 Route::get('/aboutus', [FrontendOurPackageController::class, 'aboutus'])->name('aboutus.website');
 Route::get('/contactus', [FrontendOurPackageController::class, 'contactus'])->name('contactus.website');
 
 //for website middleware
+
 Route::group(['middleware' => 'auth'], function () {
 
 
@@ -86,7 +101,21 @@ Route::group(['middleware' => 'auth'], function () {
         // Other routes that require authentication
 
 
-        //website single package view
+        // SSLCOMMERZ Start
+
+        Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+        Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+        Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+        Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+        Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+        Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+        Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+        Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+
+        //SSLCOMMERZ END
 
 
 
@@ -120,7 +149,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get("/", [DashboardController::class, 'dashboard'])->name('dashboard');
 
 
-        //admin_rtour Packages
+        //admin_tour Packages
+
         Route::get("/tour-packages", [TourPackagesController::class, 'tpackage'])->name('tourpackages');
         Route::get("/tour-packages/form", [TourPackagesController::class, 'createform'])->name('tourpackages.form');
         Route::post("/tour-packages/store", [TourPackagesController::class, 'store'])->name('tourpackages.store');
