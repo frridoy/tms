@@ -24,30 +24,30 @@
                         <!-- metric column -->
                         <div class="col">
                           <!-- .metric -->
-                          <a href="user-teams.html" class="metric metric-bordered align-items-center">
+                          <a href="{{route('tourpackages')}}" class="metric metric-bordered align-items-center">
                             <h2 class="metric-label">Total Package</h2>
                             <p class="metric-value h3">
-                              <span class="value"> 3 </span>
+                              <span class="value"> {{ $countPackage->count()}} </span>
                             </p>
                           </a> <!-- /.metric -->
                         </div><!-- /metric column -->
                         <!-- metric column -->
                         <div class="col">
                           <!-- .metric -->
-                          <a href="user-projects.html" class="metric metric-bordered align-items-center">
-                            <h2 class="metric-label"> Total User </h2>
+                          <a href="{{route('user.role')}}" class="metric metric-bordered align-items-center">
+                            <h2 class="metric-label"> Total Tourist </h2>
                             <p class="metric-value h3">
-                           <span class="value">6</span>
+                           <span class="value">{{$countTourist->count()}}</span>
                             </p>
                           </a> <!-- /.metric -->
                         </div><!-- /metric column -->
                         <!-- metric column -->
                         <div class="col">
                           <!-- .metric -->
-                          <a href="user-tasks.html" class="metric metric-bordered align-items-center">
+                          <a href="{{route('tourist.booking')}}" class="metric metric-bordered align-items-center">
                             <h2 class="metric-label"> Total Booking </h2>
                             <p class="metric-value h3">
-                             <span class="value">12</span>
+                             <span class="value">{{$countBooking->count()}}</span>
                             </p>
                           </a> <!-- /.metric -->
                         </div><!-- /metric column -->
