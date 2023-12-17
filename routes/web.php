@@ -57,7 +57,7 @@ Route::get('/select', [SinglePackageViewController::class, 'select'])->name('sel
 
 Route::get('/make/payment', [SinglePackageViewController::class, 'makepayment'])->name('make.payment');
 
-Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
+// Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
 //website reservation from to admin list
 
@@ -96,7 +96,7 @@ Route::get('/contactus', [FrontendOurPackageController::class, 'contactus'])->na
 Route::group(['middleware' => 'auth'], function () {
 
 
-
+    Route::get('/singlepackage/view/{id}', [SinglePackageViewController::class, 'singlepackageview'])->name('singlepackage.view');
 
         // Other routes that require authentication
 

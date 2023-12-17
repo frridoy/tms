@@ -64,7 +64,7 @@
 
  <div class="container">
    <div class="login-panel">
-     <h2> Admin Login</h2>
+     <h2> Login</h2>
      <form action="{{route('admin.login.post') }}" method="post">
         @csrf
        <div class="form-group">

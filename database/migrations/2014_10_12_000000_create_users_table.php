@@ -19,12 +19,15 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('contact')->nullable();
+            $table->unsignedBigInteger('contact')->nullable();
             $table->rememberToken();
             $table->timestamps();
-// ssl
+            // ssl
             $table->string('member_subscription')->nullable();
+            $table->string('tran_id')->nullable()->unique();
             $table->integer('limit')->nullable();
+            $table->string('amount')->nullable();
+            $table->string('status')->nullable();
         });
     }
 
