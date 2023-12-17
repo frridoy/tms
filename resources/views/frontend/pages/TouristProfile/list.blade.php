@@ -76,11 +76,54 @@
 
 
                 <a class="btn btn-outline-warning" href="{{ route('touristprofile.edit', auth()->user()->id) }}"> Change Your
-                    Information and Password </a>
+                    Info</a>
+                    <a class="btn btn-outline-warning" href="{{Route('my.booking',auth()->user()->id)}}"> My Booking Info</a>
 
             </div>
 
         </div>
+        {{-- <div class="container">
+
+            <div class="row d-flex align-items-center justify-content-center  ">
+                <div class="col-md-3">
+                      <table class="text-dark table table-sm table-dark">
+                        <div class="text-dark"> <h6>My Booking Info</h6> </div>
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @foreach($myPost as $detail)
+                                <tr>
+                                    <th scope="row">{{$loop->iteration}}</th>
+                                    <td>{{$detail->email}}</td>
+                                    <td>{{$detail->class_list}}</td>
+                                    <td>{{$detail->subject_name}}</td>
+                                    <td>{{$detail->contact}}</td>
+                                    <td>{{$detail->address}}</td>
+                                    <td>{{$detail->salary}}.BDT</td>
+                                    <td>{{$detail->status}}</td>
+                                    <td>
+
+                                      <a class="btn btn-danger" href="{{Route('request',$detail->id)}}">View Request</a>
+                                      <a class="btn btn-danger" href="{{Route('my.post.edit',$detail->id)}}">Edit</a>
+
+                                </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div> --}}
 
     </body>
 

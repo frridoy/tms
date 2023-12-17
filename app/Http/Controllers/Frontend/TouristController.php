@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\bookingmodel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -80,6 +81,15 @@ class TouristController extends Controller
         auth()->logout();
         notify()->success('Logout Successfully.');
         return redirect()->route('home');
+    }
+
+    ///tourist my booking
+
+
+
+    public function myBooking($id){
+        $mybooking=bookingmodel::where('tourist_id', $id)->get();
+        return view('frontend.pages.TouristProfile.MyBooking',compact('mybooking'));
     }
 }
 

@@ -77,6 +77,7 @@ Route::get('/tourist/booking/search',[SinglePackageViewController::class,'search
  Route::put('/tourist/profile/update/{id}',[TouristProfileController::class,'touristprofileupdate'])->name('touristprofile.update');
 
  //for see the tourist booking info
+ Route::get('/my/booking/{id}',[TouristController::class,'myBooking'])->name('my.booking');
 
 
 

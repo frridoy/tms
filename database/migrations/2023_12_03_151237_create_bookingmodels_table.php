@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('bookingmodels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('tourist_id');
             $table->string('email');
             $table->integer('number');
             $table->text('address');

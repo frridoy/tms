@@ -58,11 +58,11 @@
                         <div class="card-body">
                             <form action="" method="" enctype="multipart/form-data">
                                 @csrf
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="name" class="font-weight-bold">Name</label>
                                     <input type="name" name="name" required class="form-control" id="name"
                                         placeholder="Enter your name">
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <label for="email" class="font-weight-bold">Email</label>
                                     <input type="email" required name="email" class="form-control" id="email"
