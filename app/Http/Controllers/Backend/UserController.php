@@ -31,12 +31,13 @@ class UserController extends Controller
             notify()->success('Login Sucessfully.');
             return redirect()->route('dashboard');
         }
-        // notify()->success('Invalid User Email or Password.');
-        return redirect()->back()->withErrors('Invalid User Email or Password');
+        notify()->error('Invalid User Email or Password.');
+        return redirect()->back();
+        // ->withErrors('Invalid User Email or Password');
     }
     public function logout()
     {
-        // notify()->success('Logout Sucessfully.');
+        notify()->success('Logout Sucessfully.');
         auth()->logout();
 
         return redirect()->route('admin.login');

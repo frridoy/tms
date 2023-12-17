@@ -85,6 +85,16 @@
          <label for="password">Password:</label>
          <input type="password" required class="form-control" id="password" name="password" placeholder="Enter password">
        </div>
+       <div class="form-group">
+        <label for="contact">Contact No:</label>
+        <input type="tel" value="{{$touristprofileval->contact}}" class="form-control" id="contact" name="contact"
+            placeholder="Enter contact number">
+    </div>
+        <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" id="image" name="image"
+                placeholder="Enter image">
+        </div>
        <button type="submit" class="btn btn-primary btn-block">Update Your Info</button>
      </form>
    </div>

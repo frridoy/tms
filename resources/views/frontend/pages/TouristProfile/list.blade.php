@@ -62,15 +62,14 @@
 
 
 
-    {{-- <div class="profile-picture">
-        <img src="{{url('/uploads//' . ->image) }}" alt="">
-    </div> --}}
+    <div class="profile-picture">
+        <img src="{{url('/uploads//' . auth()->user()->image) }}" alt="">
+    </div>
 
     <div class="user-info">
         <h4>Name: {{auth()->user()->name}}</h4><hr>
-
-
         <h6>Email: {{auth()->user()->email}}</h6><hr>
+        <h6>Contact: {{auth()->user()->contact}}</h6><hr>
 
 
         <a class="btn btn-outline-warning" href="{{route('touristprofile.edit', auth()->user()->id)}}"> Change Your Information and Password </a>

@@ -95,7 +95,7 @@
                                 <div class="form-group">
                                     <label for="quantity" class="font-weight-bold">Quantity</label>
                                     <div class="input-group">
-                                        <input type="number" required name="quantity" class="form-control border-0 bg-light"
+                                        <input type="number" value="" required name="quantity" class="form-control border-0 bg-light"
                                             id="quantity" placeholder="Enter quantity" aria-describedby="quantity-addon">
                                         <div class="input-group-append">
                                             <span class="input-group-text bg-primary text-white"

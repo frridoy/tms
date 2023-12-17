@@ -51,7 +51,7 @@ class SinglePackageViewController extends Controller
             'choosefoodmenu' => $request->choosefoodmenu,
             'quantity' => $request->quantity,
         ]);
-        notify()->success('Reservation form submitted Sucessfully.');
+        notify()->success('Reservation Form Submitted Sucessfully.');
         return redirect()->route('make.payment'); //before it was home
     }
 
@@ -86,7 +86,7 @@ public function makingpayment ($id){
     ]);
     //payment
     $this->payment($pay);
-    notify()->success('Make Payment successfully.');
+    notify()->success('Make Payment Successfully.');
     return redirect()->route('home');
 
 }

@@ -19,11 +19,21 @@ class TouristProfileController extends Controller
     public function touristprofileupdate(Request $request, $id){
         $touristprofileval=User::find($id);
         if($touristprofileval)
+        $fileName=$touristprofileval->image;
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+
+        }
         $touristprofileval->update([
             'name'=>$request->name,
             'email'=>$request->email,
             'role'=>'tourist',
-            'password'=>$request->password
+            'password'=>$request->password,
+            'contact'=>$request->contact,
+            'image'=>$fileName
 
         ]);
         notify()->success('Profile Updated Sucessfully.');

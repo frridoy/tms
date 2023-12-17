@@ -15,12 +15,24 @@ class TouristController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+
+        }
+
 
         User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'role'=>'tourist',
             'password'=>bcrypt($request->password),
+            'contact'=>$request->contact,
+            'image' => $fileName
+
         ]);
         // dd($request->all());
         notify()->success('Registration Successful.');
@@ -52,11 +64,11 @@ class TouristController extends Controller
 
         if(auth()->attempt($credentials))
         {
-            notify()->success('Login Success.');
+            notify()->success('Login Successfully.');
             return redirect()->route('home');
         }
 
-        notify()->error('Invalid Credentials.');
+        notify()->error('Invalid User Email & Password.');
             return redirect()->back();
 
 
@@ -66,7 +78,7 @@ class TouristController extends Controller
     public function logout()
     {
         auth()->logout();
-        notify()->success('Logout Success.');
+        notify()->success('Logout Successfully.');
         return redirect()->route('home');
     }
 }

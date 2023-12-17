@@ -2,7 +2,7 @@
  <html lang="en">
 
  <head>
-    @notifyCss
+     @notifyCss
      <!-- Required meta tags -->
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- End Required meta tags -->
@@ -47,12 +47,12 @@
      </script><!-- END THEME STYLES -->
 
 
-<style>
-    .notify {
-    z-index: 9999;
-    justify-content: center;
-    }
-    </style>
+     <style>
+         .notify {
+             z-index: 9999;
+             justify-content: center;
+         }
+     </style>
 
  </head>
 
