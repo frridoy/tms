@@ -11,10 +11,6 @@
                         <div class="d-flex v-card align-items-center">
                         </div>
                         <h6>Confirm Your Payment</h6>
-
-
-                        <h6>Price 5990. BDT</h6>
-
                         <a class="btn btn-primary" href="{{route('maketourist.payment',auth()->user()->id)}}" role="button">Make Payment</a>
                     </div>
                 </div>

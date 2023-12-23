@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('chooseroom');
             $table->string('choosefoodmenu');
             $table->integer('quantity');
+            $table->double('amount');
+            $table->string('payment_status');
+            $table->string('transaction_id');
             $table->timestamps();
         });
     }

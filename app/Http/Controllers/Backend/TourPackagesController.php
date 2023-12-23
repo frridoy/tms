@@ -14,7 +14,7 @@ class TourPackagesController extends Controller
     public function tpackage()
     {
 
-        $packages = Package::paginate(3);
+        $packages = Package::paginate(5);
         return view('admin.pages.TPackage.tpackage', compact('packages'));
     }
 

@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ManageUsersController;
 use App\Http\Controllers\Backend\TourPackagesController;
 use App\Http\Controllers\Backend\ManageBookingController;
 use App\Http\Controllers\Backend\ManagePagesController;
+use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\SpotController;
 use App\Http\Controllers\Backend\TransportController;
 use App\Http\Controllers\Backend\UserroleController;
@@ -51,7 +52,7 @@ Route::post('/login', [TouristController::class, 'doLogin'])->name('tourist.do.l
 
 // For Tourist select form
 
-Route::get('/select', [SinglePackageViewController::class, 'select'])->name('select');
+Route::get('/select/{single_pack_id}', [SinglePackageViewController::class, 'select'])->name('select');
 
 //for make payment
 
@@ -66,7 +67,7 @@ Route::get('/tourist/booking/form',[SinglePackageViewController::class,'create']
 Route::post('/tourist/booking/form/store',[SinglePackageViewController::class,'store'])->name('tourist.store');
 
 //for ssl call
-Route::get('/making/payment/{id}',[SinglePackageViewController::class, 'makingpayment'])->name('maketourist.payment');
+Route::get('/making/payment/{id}',[SinglePackageViewController::class, 'store'])->name('maketourist.payment');
 
 //for tourist
 Route::get('/tourist/booking/search',[SinglePackageViewController::class,'search'])->name('touristbooking.search');
@@ -202,6 +203,9 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/user/role',[UserController::class, 'userrole'])->name('user.role');
         Route::get('/user/role/form',[UserController::class, 'create'])->name('userrole.form');
         Route::post('/user/role/form/store',[UserController::class, 'store'])->name('userrole.store');
+
+        //for booking report
+        Route::get('/tourist/booking/report',[ReportController::class, 'bookingreport'])->name('booking.report');
 
 
         //Admin_Profile

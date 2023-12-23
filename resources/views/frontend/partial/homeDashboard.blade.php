@@ -10,13 +10,8 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
 
-                        {{-- <img src="{{url('forntend/')}}/assets/images/slider/slid_2.jpg" class="d-block w-100"
-                            alt="..."> --}}
-                            
-                            <img src="https://i.ibb.co/rGjncd3/410268422-259213183836550-226005397833665863-n.jpg" class="d-block w-100"
+                        <img src="{{url('forntend/')}}/assets/images/slider/slid_2.jpg" class="d-block w-100"
                             alt="...">
-
-
                         <div class="detail-card">
                             <p> Look deep into nature, and then you will understand everything better.
                             </p>
@@ -187,162 +182,25 @@
     </div>
 
 
-    <!--################### Destinations Starts Here #######################--->
 
-    <div class="destinations container-fluid">
+
+
+
+
+
+
+
+
+
+
+
+    <!--*************** Last package Starts Here ***************-->
+    <div class="popular-pack no-bgpack container-fluid">
         <div class="container">
             <div class="session-title">
-                <h2>Our Destinations</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin nisi id consequat bibendum.
-                    Phasellus at convallis elit. In purus enim, scelerisque id arcu vitae</p>
+                <h2>Last Tour Packages</h2>
+                <p>"We always strive to provide the best packages, allowing you to explore the beauty of nature at an affordable price."</p>
             </div>
-
-            <div class="dest-row row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="dest-col">
-                        <div class="dest-img">
-                            <img src="{{ url('forntend/') }}/assets/images/destination/d2.jpg" alt="">
-
-
-                        </div>
-                        <h3>Switzerland</h3>
-
-                        <button class="btn btn-outline-success">Book Now</button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="dest-col">
-                        <div class="dest-img">
-                            <img src="{{ url('forntend/') }}/assets/images/destination/d3.jpg" alt="">
-                        </div>
-                        <h3>Maldives</h3>
-
-                        <button class="btn btn-outline-success">Book Now</button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="dest-col">
-                        <div class="dest-img">
-                            <img src="{{ url('forntend/') }}/assets/images/destination/d4.jpg" alt="">
-                        </div>
-                        <h3>Srilanka</h3>
-
-                        <button class="btn btn-outline-success">Book Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-
-    <!--################### Tour Review Starts Here #######################--->
-
-    <div class="review container-fluid">
-        <div class="container">
-            <div class="session-title">
-                <h2>What people say about Us</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin nisi id consequat bibendum.
-                    Phasellus at convallis elit. In purus enim, scelerisque id arcu vitae</p>
-            </div>
-            <div class="row review-row">
-                <div class="col-md-6">
-                    <div class="review-col">
-                        <div class="profil">
-                            <img src="{{ url('forntend/') }}/assets/images/testimonial/member-01.jpg" alt="">
-                        </div>
-                        <div class="review-detail">
-                            <h4>Canadian Rockies</h4>
-                            <p>The sightseeing and activities were better than we even thought! I still can’t believe we did
-                                so much in such a short time, but we did not feel stressed. We really loved the tour and
-                                would do it all over again in a minute! Thanks.</p>
-                            <h6>John Smith</h6>
-                            <ul class="rat">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="review-col">
-                        <div class="profil">
-                            <img src="{{ url('forntend/') }}/assets/images/testimonial/member-01.jpg" alt="">
-                        </div>
-                        <div class="review-detail">
-                            <h4>Lake Tahoe Adventure</h4>
-                            <p>The sightseeing and activities were better than we even thought! I still can’t believe we did
-                                so much in such a short time, but we did not feel stressed. We really loved the tour and
-                                would do it all over again in a minute! Thanks.</p>
-                            <h6>John Smith</h6>
-                            <ul class="rat">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="review-col">
-                        <div class="profil">
-                            <img src="{{ url('forntend/') }}/assets/images/testimonial/member-01.jpg" alt="">
-                        </div>
-                        <div class="review-detail">
-                            <h4>Discover Costa Rica</h4>
-                            <p>The sightseeing and activities were better than we even thought! I still can’t believe we did
-                                so much in such a short time, but we did not feel stressed. We really loved the tour and
-                                would do it all over again in a minute! Thanks.</p>
-                            <h6>John Smith</h6>
-                            <ul class="rat">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="review-col">
-                        <div class="profil">
-                            <img src="{{ url('forntend/') }}/assets/images/testimonial/member-01.jpg" alt="">
-                        </div>
-                        <div class="review-detail">
-                            <h4>Canadian Rockies</h4>
-                            <p>The sightseeing and activities were better than we even thought! I still can’t believe we did
-                                so much in such a short time, but we did not feel stressed. We really loved the tour and
-                                would do it all over again in a minute! Thanks.</p>
-                            <h6>John Smith</h6>
-                            <ul class="rat">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!--*************** Blog Starts Here ***************-->
-
     <div class="container-fluid blog">
         <div class="container">
 

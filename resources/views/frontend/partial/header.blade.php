@@ -38,10 +38,6 @@
                             <a class="nav-link" href="{{route('tourist.profile')}}">My Profile</a>
                         </li>
 
-                        <li class="nav-item p-0 m-0">
-                            <a class="nav-link" href="">Booking Details</a>
-                        </li>
-
                         @endauth
 
                             <li class="nav-item active p-0 m-0">

@@ -73,11 +73,19 @@
                 <hr>
                 <h6>Contact: {{ auth()->user()->contact }}</h6>
                 <hr>
+                {{-- <h6>Payment Status: {{ auth()->user()->status }}</h6>
+                <hr> --}}
+                @foreach ($userdata as $item)
+                <h6>Amount: {{ $item['amount'] }}</h6>
+                <h6>Payment Status:  {{ $item['payment_status'] }}</h6>
+                <h6>Transciation Id:{{ $item['transaction_id']}}</h6>
+                <hr>
+                @endforeach
 
 
                 <a class="btn btn-outline-warning" href="{{ route('touristprofile.edit', auth()->user()->id) }}"> Change Your
                     Info</a>
-                    <a class="btn btn-outline-warning" href="{{Route('my.booking',auth()->user()->id)}}"> My Booking Info</a>
+                <a class="btn btn-outline-warning" href="{{ Route('my.booking', auth()->user()->id) }}"> My Booking Info</a>
 
             </div>
 
@@ -102,7 +110,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach($myPost as $detail)
+                          @foreach ($myPost as $detail)
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
                                     <td>{{$detail->email}}</td>

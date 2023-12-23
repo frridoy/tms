@@ -7,6 +7,7 @@ use DB;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use App\Models\bookingmodel;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -163,7 +164,7 @@ class SslCommerzPaymentController extends Controller
 
     public function success(Request $request)
     {
-        // dd();
+        //dd($request);
         // echo "Transaction is Successful";
 
 
@@ -173,10 +174,10 @@ class SslCommerzPaymentController extends Controller
 
         $sslc = new SslCommerzNotification();
 
-        $order_details = User::where('tran_id', $tran_id)->first();
+        $order_details = bookingmodel::where('transaction_id', $tran_id)->first();
         // dd($order_details);
 
-        if ($order_details->status == 'pending') {
+        if ($order_details->payment_status == 'Pending') {
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
             // dd('hi');
             if ($validation) {
@@ -190,11 +191,12 @@ class SslCommerzPaymentController extends Controller
                 //     ->where('transaction_id', $tran_id)
                 //     ->update(['status' => 'Processing']);
                 $order_details->update([
-                    'status' => 'confirm',
+                    'payment_status' => 'confirm',
                 ]);
                 // dd($order_details->status);
 
                 echo "<br >Transaction is successfully Completed";
+                return redirect()->route('home');
             }
             // dd('bye');
         } else if ($order_details->status == 'Processing' || $order_details->status == 'confirm') {

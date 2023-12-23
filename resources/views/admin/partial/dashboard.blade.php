@@ -23,7 +23,7 @@
                                 <div class="col">
 
                                     <a href="{{ route('tourpackages') }}" class="metric metric-bordered align-items-center">
-                                        <h2 class="metric-label">Total Package</h2>
+                                        <h2 class="metric-label">Total Packages</h2>
                                         <p class="metric-value h3">
                                             <span class="value"> {{ $countPackage->count() }} </span>
                                         </p>
@@ -33,7 +33,7 @@
                                 <div class="col">
 
                                     <a href="{{ route('user.role') }}" class="metric metric-bordered align-items-center">
-                                        <h2 class="metric-label"> Total Tourist </h2>
+                                        <h2 class="metric-label"> Total Tourists </h2>
                                         <p class="metric-value h3">
                                             <span class="value">{{ $countTourist->count() }}</span>
                                         </p>

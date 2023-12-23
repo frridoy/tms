@@ -103,8 +103,11 @@
                                 <input type="file" class="form-control" id="image" name="image"
                                     placeholder="Enter image">
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
+                        {{-- <button type="submit" class="btn btn-primary btn-block">Submit</button> --}}
+
+                        <button type="submit" class="btn btn-outline-info btn-block">Submit</button>
+
                     </form>
                 </div>
             </div>

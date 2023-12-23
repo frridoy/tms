@@ -97,7 +97,6 @@
 </body>
 
 </html> --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -178,7 +177,8 @@
             <p class="card-text"><strong>Duration:</strong> {{ $singlepackage->duration }} Days</p>
             <p class="card-text"><strong>Amount:</strong> {{ $singlepackage->price }} BDT</p>
             <p class="card-text"><strong>Description:</strong> {{ $singlepackage->description }}</p>
-            <a href="{{route("select")}}"> <button type="button" class="btn btn-primary"> View Details </button> </a>
+            <a href="{{route("select",$singlepackage->id)}}">
+                <button type="button" class="btn btn-primary"> View Details </button> </a>
         </div>
     </div>
 

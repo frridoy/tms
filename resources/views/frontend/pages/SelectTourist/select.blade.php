@@ -87,11 +87,20 @@
                                     <textarea class="form-control" required name="address" id="address" rows="1" placeholder="Enter your address"></textarea>
                                 </div>
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="code" class="font-weight-bold">Package Code</label>
-                                    <input type="code"name="code" class="form-control" id=""
-                                        placeholder="Your Package Code">
+                                    <input type="text" name="code" class="form-control" value="{{ $singlepackage->code }}" readonly>
+                                </div> --}}
+                                <div class="form-group">
+                                    <label for="code" class="font-weight-bold">Destination</label>
+                                    <textarea class="form-control" required name="code" id="code" rows="1" placeholder="Enter your address"></textarea>
                                 </div>
+
+
+                                <input type="hidden" name="price" value="{{$singlepackage->price}}">
+                                <input type="hidden" name="code" value="{{$singlepackage->code}}">
+
+
                                 <div class="form-group">
                                     <label for="quantity" class="font-weight-bold">Quantity</label>
                                     <div class="input-group">

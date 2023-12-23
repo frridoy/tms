@@ -77,6 +77,7 @@
          </main><!-- /.app-main -->
      </div><!-- /.app -->
      <!-- BEGIN BASE JS -->
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
      <script src="https://uselooper.com/assets/vendor/jquery/jquery.min.js"></script>
      <script src="https://uselooper.com/assets/vendor/popper.js/umd/popper.min.js"></script>
      <script src=" https://uselooper.com/assets/vendor/bootstrap/js/bootstrap.min.js"></script> <!-- END BASE JS -->
@@ -103,6 +104,7 @@
          gtag('config', 'UA-116692175-1');
      </script>
      @notifyJs
+     @stack('yourJsCode')
  </body>
 
  </html>

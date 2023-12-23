@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\bookingmodel;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class TouristProfileController extends Controller
 {
     public function touristprofile(){
-        return view('frontend.pages.TouristProfile.list');
+        $userdata=bookingmodel::where('tourist_id',auth()->user()->id)->get();
+        // dd($userdata);
+        return view('frontend.pages.TouristProfile.list',compact('userdata'));
     }
     public function touristprofileedit ($id){
-        $touristprofileval=User::find($id);
+        $touristprofileval=bookingmodel::find($id);
         return view('frontend.pages.TouristProfile.editprofile',compact('touristprofileval'));
     }
 
