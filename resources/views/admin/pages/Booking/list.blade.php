@@ -3,8 +3,8 @@
     {{-- <a href="{{ route('touristbooking.form') }}" class="btn btn-primary mb-4 mt-4"> Tourist Reservation Form </a> --}}
     <a href="{{ route('booking.report') }}" class="btn btn-outline-info mb-4 mt-4 ">Report</a>
     <h2> Tourist Booking List </h2>
-    {{-- for searchb start --}}
-    <div class="container mt-0 col-md-2 justify-content-end mr-0 p-0 m-0 mb-0">
+    {{-- for search start --}}
+    {{-- <div class="container mt-0 col-md-2 justify-content-end mr-0 p-0 m-0 mb-0">
         <div class="row justify-content-end">
             <div class="col-md-24">
                 <form action="{{ route('touristbooking.search') }}" method="get" class="form-inline">
@@ -22,7 +22,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- end search --}}
     <table class="table">
         <thead>

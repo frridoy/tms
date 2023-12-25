@@ -21,7 +21,9 @@
                             <th scope="col">Room</th>
                             <th scope="col">Food</th>
                             <th scope="col">Quantity</th>
-                            {{-- <th scope="col">Action</th> --}}
+                            <th scope="col">Amount</th>
+                            <th scope="col">Trans_ID</th>
+                            <th scope="col">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,6 +38,9 @@
                                 <td>{{ $detail->chooseroom }}</td>
                                 <td>{{ $detail->choosefoodmenu }}</td>
                                 <td>{{ $detail->quantity }}</td>
+                                <td>{{ $detail->amount }}</td>
+                                <td>{{ $detail->transaction_id }}</td>
+                                <td>{{ $detail->payment_status }}</td>
                         </tr>
                         {{-- <tr>
                               <a class="btn btn-danger" href="{{Route('request',$detail->id)}}">View Request</a>

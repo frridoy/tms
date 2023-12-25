@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <label for="name">Your Name:</label>
                         <input type="name" required value="{{ $touristprofileval->name }}" class="form-control"
-                            id="email" name="name" placeholder="Enter name">
+                            id="name" name="name" placeholder="Enter name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address:</label>

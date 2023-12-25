@@ -10,8 +10,6 @@
                 <th scope="col">Role</th>
                 <th scope="col">Email</th>
                 <th scope="col">Image</th>
-                <th scope="col">Payment</th>
-                <th scope="col">Status</th>
                 <th scope="col">Action</th>
                 {{-- <th scope="col">Password</th>  --}}
 
@@ -28,8 +26,7 @@
                         <img style="border-radius: 15%" width="70px" src="{{ url('/uploads//' . $item->image) }}"
                             alt="">
                     </td>
-                    <td>{{ $item->amount }}</td>
-                    <td>{{ $item->status }}</td>
+                    
 
                     <td>
                         {{-- <a href="{{route('package.view',$package->id)}}"class="btn btn-primary">View</a>

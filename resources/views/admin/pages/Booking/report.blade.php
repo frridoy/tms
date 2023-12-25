@@ -5,6 +5,7 @@
     <button class="btn btn-outline-warning" onclick="printContent('printDiv')">Print Booking Info</button>
 
     <div id="printDiv">
+        
         <table class="table">
             <thead>
                 <tr>
@@ -18,8 +19,8 @@
                     <th scope="col">Food</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Amount</th>
-                <th scope="col">Status</th>
-                <th scope="col">Transaction Id</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Transaction Id</th>
 
                 </tr>
             </thead>
@@ -36,8 +37,8 @@
                         <td>{{ $booking->choosefoodmenu }}</td>
                         <td>{{ $booking->quantity }}</td>
                         <td>{{ $booking->amount }}</td>
-                    <td>{{ $booking->payment_status}}</td>
-                    <td>{{ $booking->transaction_id}}</td>
+                        <td>{{ $booking->payment_status }}</td>
+                        <td>{{ $booking->transaction_id }}</td>
                     </tr>
                 @endforeach
             </tbody>
@@ -45,7 +46,7 @@
     </div>
 @endsection
 
-@push('yourJsCode')
+@push('reportcode')
     <script type="text/javascript">
         function printContent(el) {
             var restorepage = $('body').html();

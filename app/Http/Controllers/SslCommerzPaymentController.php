@@ -196,7 +196,7 @@ class SslCommerzPaymentController extends Controller
                 // dd($order_details->status);
 
                 echo "<br >Transaction is successfully Completed";
-                return redirect()->route('home');
+                return redirect()->route('tourist.profile'); //before it was home
             }
             // dd('bye');
         } else if ($order_details->status == 'Processing' || $order_details->status == 'confirm') {

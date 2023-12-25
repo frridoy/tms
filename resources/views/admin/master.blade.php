@@ -104,7 +104,7 @@
          gtag('config', 'UA-116692175-1');
      </script>
      @notifyJs
-     @stack('yourJsCode')
+     @stack('reportcode')
  </body>
 
  </html>

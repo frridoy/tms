@@ -1,6 +1,6 @@
-@extends('frontend.master')
+ @extends('frontend.master')
 @section('content')
-    <br> <br> <br>
+    <br>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -73,12 +73,10 @@
                 <hr>
                 <h6>Contact: {{ auth()->user()->contact }}</h6>
                 <hr>
-                {{-- <h6>Payment Status: {{ auth()->user()->status }}</h6>
-                <hr> --}}
                 @foreach ($userdata as $item)
                 <h6>Amount: {{ $item['amount'] }}</h6>
                 <h6>Payment Status:  {{ $item['payment_status'] }}</h6>
-                <h6>Transciation Id:{{ $item['transaction_id']}}</h6>
+                <h6>Transciation Id: {{ $item['transaction_id']}}</h6>
                 <hr>
                 @endforeach
 
@@ -90,50 +88,11 @@
             </div>
 
         </div>
-        {{-- <div class="container">
-
-            <div class="row d-flex align-items-center justify-content-center  ">
-                <div class="col-md-3">
-                      <table class="text-dark table table-sm table-dark">
-                        <div class="text-dark"> <h6>My Booking Info</h6> </div>
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Class</th>
-                            <th scope="col">Subject</th>
-                            <th scope="col">Contact</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Salary</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @foreach ($myPost as $detail)
-                                <tr>
-                                    <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$detail->email}}</td>
-                                    <td>{{$detail->class_list}}</td>
-                                    <td>{{$detail->subject_name}}</td>
-                                    <td>{{$detail->contact}}</td>
-                                    <td>{{$detail->address}}</td>
-                                    <td>{{$detail->salary}}.BDT</td>
-                                    <td>{{$detail->status}}</td>
-                                    <td>
-
-                                      <a class="btn btn-danger" href="{{Route('request',$detail->id)}}">View Request</a>
-                                      <a class="btn btn-danger" href="{{Route('my.post.edit',$detail->id)}}">Edit</a>
-
-                                </tr>
-                          @endforeach
-                        </tbody>
-                      </table>
-                </div>
-            </div>
-        </div> --}}
 
     </body>
 
     </html>
 @endsection
+
+
+

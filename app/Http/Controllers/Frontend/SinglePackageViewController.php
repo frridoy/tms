@@ -100,9 +100,6 @@ class SinglePackageViewController extends Controller
             'amount' => $request->price * $request->quantity,
             'transaction_id' => date('YmdHis'),
             'payment_status' => 'Pending',
-            // 'amount' => $request->price*$request->quantity,
-            // 'amount' => floatval($request->price) * intval($request->quantity),
-            // 'status' => 'pending',
             'quantity' => $request->quantity,
         ]);
 

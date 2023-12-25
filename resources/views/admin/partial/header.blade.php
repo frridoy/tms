@@ -9,6 +9,29 @@
                         class="hamburger-inner"></span></span></button>
             <h1>TMS</h1>
         </div>
+        {{-- for search start --}}
+        <div>
+            <div class="container mt-0 col-md-2 justify-content-end mr-0 p-0 m-0 mb-0">
+                <div class="row justify-content-end">
+                    <div class="col-md-24">
+                        <form action="{{ route('touristbooking.search') }}" method="get" class="form-inline">
+                            <div class="input-group"
+                                style="position: relative;
+                  left: 600px;
+                  top: 10px;
+                  width: 34em;
+              } ">
+                                <input type="text" class="form-control" placeholder="Search..." name="search">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-success">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{{-- for search end --}}
 
         <div class="top-bar-list">
 
@@ -23,6 +46,7 @@
 
 
                 <div class="dropdown d-none d-md-flex">
+
                     <button class="btn-account" type="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false"><span class="user-avatar user-avatar-md"><img
                                 src="https://i.ibb.co/sCw4qZ6/1696273943851-2-1.jpg" alt=""></span> <span

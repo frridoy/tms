@@ -11,11 +11,11 @@ class TouristProfileController extends Controller
 {
     public function touristprofile(){
         $userdata=bookingmodel::where('tourist_id',auth()->user()->id)->get();
-        // dd($userdata);
+
         return view('frontend.pages.TouristProfile.list',compact('userdata'));
     }
     public function touristprofileedit ($id){
-        $touristprofileval=bookingmodel::find($id);
+        $touristprofileval=User::find($id);////it was bookingmodel
         return view('frontend.pages.TouristProfile.editprofile',compact('touristprofileval'));
     }
 
@@ -43,3 +43,4 @@ class TouristProfileController extends Controller
         return redirect()->route('home');
     }
 }
+
