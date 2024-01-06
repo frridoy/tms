@@ -5,7 +5,7 @@
     <button class="btn btn-outline-warning" onclick="printContent('printDiv')">Print Booking Info</button>
 
     <div id="printDiv">
-        
+
         <table class="table">
             <thead>
                 <tr>
@@ -13,14 +13,16 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Number</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Address</th>
+                    <th scope="col">Pickupdate</th>
                     <th scope="col">Code</th>
                     <th scope="col">Room</th>
                     <th scope="col">Food</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Transaction Id</th>
+                    <th scope="col">Tran_Id</th>
 
                 </tr>
             </thead>
@@ -31,7 +33,11 @@
                         <td>{{ $booking->name }}</td>
                         <td>{{ $booking->email }}</td>
                         <td>{{ $booking->number }}</td>
+                        <td>
+                            <img style="border-radius: 15%" width="70px"  src="{{ url('/uploads//' . $booking->image) }}" alt="">
+                        </td>
                         <td>{{ $booking->address }}</td>
+                        <td>{{ $booking->pickupdate }}</td>
                         <td>{{ $booking->code }}</td>
                         <td>{{ $booking->chooseroom }}</td>
                         <td>{{ $booking->choosefoodmenu }}</td>

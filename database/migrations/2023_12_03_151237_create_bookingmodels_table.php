@@ -17,7 +17,9 @@ return new class extends Migration
             $table->integer('tourist_id');
             $table->string('email');
             $table->integer('number');
+            $table->string('image')->nullable();
             $table->text('address');
+            $table->date('pickupdate');
             $table->string('code',30);
             $table->string('chooseroom');
             $table->string('choosefoodmenu');

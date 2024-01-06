@@ -3,14 +3,10 @@
     <div class="top-bar">
 
         <div class="top-bar-brand">
-
-            <button class="hamburger hamburger-squeeze mr-2" type="button" data-toggle="aside-menu"
-                aria-label="toggle aside menu"><span class="hamburger-box"><span
-                        class="hamburger-inner"></span></span></button>
             <h1>TMS</h1>
         </div>
         {{-- for search start --}}
-        <div>
+        {{-- <div>
             <div class="container mt-0 col-md-2 justify-content-end mr-0 p-0 m-0 mb-0">
                 <div class="row justify-content-end">
                     <div class="col-md-24">
@@ -30,7 +26,32 @@
                     </div>
                 </div>
             </div>
+        </div> --}}
+
+        {{-- new one start here --}}
+
+            <div class="container mt-2 col-md-6 justify-content-center">
+            <div class="row justify-content-end">
+                <div class="col-md-24">
+                    <form action="{{ route('touristbooking.search') }}" method="get" class="form-inline">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." name="search">
+
+                            <!-- Start Date Input -->
+                            <input type="date" class="form-control" placeholder="Start Date" name="start_date">
+
+                            <!-- End Date Input -->
+                            <input type="date" class="form-control" placeholder="End Date" name="end_date">
+
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-success">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+
 {{-- for search end --}}
 
         <div class="top-bar-list">

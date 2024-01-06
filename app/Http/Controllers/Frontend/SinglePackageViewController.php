@@ -8,6 +8,7 @@ use App\Models\bookingmodel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Library\SslCommerz\SslCommerzNotification;
+use Illuminate\Support\Facades\Validator;
 
 class SinglePackageViewController extends Controller
 {
@@ -39,31 +40,68 @@ class SinglePackageViewController extends Controller
         return view('frontend.pages.SelectTourist.select');
     }
 
+    // public function search(Request $request)
+    // {
+
+    //     if ($request->search) {
+    //         $searchTerm = $request->search;
+    //         $bookings = bookingmodel::where('name', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('code', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('quantity', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('number', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('chooseroom', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('choosefoodmenu', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('email', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('address', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('amount', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('payment_status', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('transaction_id', 'LIKE', '%' . $searchTerm . '%')
+    //         ->orWhere('pickupdate', 'LIKE', '%' . $searchTerm . '%')
+
+    //         ->get();
+    //     } else {
+    //         $bookings = bookingmodel::all();
+    //     }
+    //     return view('admin.pages.Booking.search', compact('bookings'));
+    // }
+
     public function search(Request $request)
-    {
+{
+    $bookings = bookingmodel::query();
 
-        if ($request->search) {
-            $searchTerm = $request->search;
-            $bookings = bookingmodel::where('name', 'LIKE', '%' . $searchTerm . '%')
-            ->orWhere('code', 'LIKE', '%' . $searchTerm . '%')
-            ->orWhere('quantity', 'LIKE', '%' . $searchTerm . '%')
-            ->orWhere('number', 'LIKE', '%' . $searchTerm . '%')
-            ->orWhere('chooseroom', 'LIKE', '%' . $searchTerm . '%')
-            ->orWhere('choosefoodmenu', 'LIKE', '%' . $searchTerm . '%')
-            ->orWhere('email', 'LIKE', '%' . $searchTerm . '%')
-            ->orWhere('address', 'LIKE', '%' . $searchTerm . '%')
-            ->get();
-        } else {
-            $bookings = bookingmodel::all();
-        }
-        return view('admin.pages.Booking.search', compact('bookings'));
+    if ($request->filled('search')) {
+        $searchTerm = $request->search;
+        $bookings->where(function ($query) use ($searchTerm) {
+            $query->where('name', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('code', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('quantity', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('number', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('chooseroom', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('choosefoodmenu', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('email', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('address', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('amount', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('pickupdate', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('transaction_id', 'LIKE', '%' . $searchTerm . '%')
+                ->orWhere('payment_status', 'LIKE', '%' . $searchTerm . '%');
+
+        });
     }
 
-
-    public function makepayment()
-    {
-        return view('frontend.pages.Payment.makepayment');
+    if ($request->filled('start_date') && $request->filled('end_date')) {
+        $startDate = $request->start_date;
+        $endDate = $request->end_date;
+        $bookings->whereBetween('pickupdate', [$startDate, $endDate]);
     }
+
+    $bookings = $bookings->get();
+    return view('admin.pages.Booking.search', compact('bookings'));
+}
+
+    // public function makepayment()
+    // {
+    //     return view('frontend.pages.Payment.makepayment');
+    // }
 
 
     // public function makingpayment($id)
@@ -85,6 +123,33 @@ class SinglePackageViewController extends Controller
 
     public function store(Request $request)
     {
+
+        $validate=Validator::make($request->all(),[
+
+            'email'=>'required',
+            'number'=>'required',
+            'address'=>'required',
+            'pickupdate'=>'required',
+            'chooseroom' => 'required',
+            'choosefoodmenu' =>'required',
+            'quantity' => 'required',
+
+        ]);
+
+        if($validate->fails())
+        {
+            return redirect()->back()->with('myError',$validate->getMessageBag());
+        }
+        $fileName=null;
+        if($request->hasFile('image'))
+        {
+            $file=$request->file('image');
+            $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+            $file->storeAs('/uploads',$fileName);
+
+        }
+
+    {
         //dd($request->all());
         $booking = bookingmodel::create([
             'name' => auth()->user()->name,
@@ -94,6 +159,7 @@ class SinglePackageViewController extends Controller
             'email' => $request->email,
             'number' => $request->number,
             'address' => $request->address,
+            'pickupdate' => $request->pickupdate,
             'code' => $request->code,
             'chooseroom' => $request->chooseroom,
             'choosefoodmenu' => $request->choosefoodmenu,
@@ -101,7 +167,9 @@ class SinglePackageViewController extends Controller
             'transaction_id' => date('YmdHis'),
             'payment_status' => 'Pending',
             'quantity' => $request->quantity,
+            'image' => $fileName
         ]);
+    }
 
         $this->payment($booking);
 

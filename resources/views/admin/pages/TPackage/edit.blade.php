@@ -24,6 +24,29 @@
                 <input value="{{ $package->description }}" type="text" class="form-control" id=""
                     name="description" required>
             </div>
+
+            <div class="form-group">
+                <label for="hotelcondition">Hotel Type:</label>
+                <select  class="form-control" id="" name="hotelcondition" required>
+                    <option>3 Star</option>
+                    <option>4 Star</option>
+                    <option>5 Star</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="transportcondition">Transport Type:</label>
+                <select class="form-control" id="" name="transportcondition" required>
+                    <option>Bus AC</option>
+                    <option>Bus Non-AC</option>
+                    <option>Sleeper Bus</option>
+                    <option>AC Train</option>
+                    <option>Non-AC Train</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="spotnames"> Spots Name:</label>
+                <input type="text" value="{{ $package->spotnames }}"  class="form-control" id="" name="spotnames">
+            </div>
             <div class="form-group">
                 <label for="price">Price:</label>
                 <input value="{{ $package->price }}" type="number" class="form-control" id="" name="price"

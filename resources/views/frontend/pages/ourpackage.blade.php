@@ -53,12 +53,16 @@
 
 @extends('frontend.master')
 @section('content')
-<div class="popular-pack no-bgpack container-fluid">
-    <div class="container">
-        <div class="session-title">
-            <h2>Our Packages</h2>
-            <p>"We always strive to provide the best packages, allowing you to explore the beauty of nature at an affordable price."</p>
-        </div>
+
+<div class="popular-pack container-fluid bg-image p-0" >
+    <div class=" p-4">
+    {{-- style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"> --}}
+
+        {{-- <div class=" p-4" style="background-color: black; margin: 0;"> --}}
+        <br> <br>
+            <h2 class="text-center">Our Packages</h2>
+            <p class="text-center">"We always strive to provide the best packages, allowing you to explore the beauty of nature at an affordable price."</p>
+
         <div class="row pack-row">
           @foreach ($packages as $package )
           <div class="col-lg-4 col-md-6 col-sm-6">

@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('content')
-    <br>
+
+    <a href="" class="btn btn-outline-success m-3 " onclick="printContent('printDiv')">Report</a>
     <div class="fw-normal mb-4">
         <h2
             class="fw-normal fs-5 mx-auto text-center rounded-pill p-2 w-50 mb-5
@@ -18,19 +19,23 @@
 
     </div>
     @if ($bookings->count() > 0)
+    <div id="printDiv">
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">SI</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Number</th>
                     <th scope="col">Address</th>
+                    <th scope="col">Date</th>
                     <th scope="col">Code</th>
                     <th scope="col">Room</th>
                     <th scope="col">Food</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Tran_Id</th>
+                    <th scope="col"> Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,17 +46,33 @@
                         <td>{{ $booking->email }}</td>
                         <td>{{ $booking->number }}</td>
                         <td>{{ $booking->address }}</td>
+                        <td>{{ $booking->pickupdate }}</td>
                         <td>{{ $booking->code }}</td>
                         <td>{{ $booking->chooseroom }}</td>
                         <td>{{ $booking->choosefoodmenu }}</td>
                         <td>{{ $booking->quantity }}</td>
+                        <td>{{ $booking->amount }}</td>
+                        <td>{{ $booking->transaction_id }}</td>
+                        <td>{{ $booking->payment_status }}</td>
                         <td>
 
-                            <a href="" class="btn btn-info">View</a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+    </div>
     @endif
 @endsection
+
+@push('reportcode')
+    <script type="text/javascript">
+        function printContent(el) {
+            var restorepage = $('body').html();
+            var printcontent = $('#' + el).clone();
+            $('body').empty().html(printcontent);
+            window.print();
+            $('body').html(restorepage);
+        }
+    </script>
+@endpush

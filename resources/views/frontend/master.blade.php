@@ -37,7 +37,8 @@
 
 
     @notifyJs
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
     {{-- for ssl script --}}
     <script>
         (function(window, document) {
@@ -56,10 +57,9 @@
 
     {{-- end ssl --}}
 
-
+    @stack('reportcode')
 
 </body>
-
 <script src="{{ url('forntend/') }}/assets/js/jquery-3.2.1.min.js"></script>
 <script src="{{ url('forntend/') }}/assets/js/popper.min.js"></script>
 <script src="{{ url('forntend/') }}/assets/js/bootstrap.min.js"></script>

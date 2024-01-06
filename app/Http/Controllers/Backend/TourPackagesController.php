@@ -28,7 +28,7 @@ class TourPackagesController extends Controller
         $package->delete();
      }
      notify()->success('Tour Package Deleted Sucessfully.');
-     return redirect()->back();
+     return redirect()->route('tourpackages');
     }
     public function view($id){
         $package=Package::find($id);
@@ -56,6 +56,9 @@ class TourPackagesController extends Controller
             'duration' => $request->duration,
             'description' => $request->description,
             'price' => $request->price,
+            'hotelcondition' => $request->hotelcondition,
+            'transportcondition' => $request->transportcondition,
+            'spotnames' => $request->spotnames,
             'image' => $fileName
 
         ]);
@@ -76,6 +79,8 @@ class TourPackagesController extends Controller
             'duration'=>'required',
             'description'=>'required',
             'price'=>'required',
+            'hotelcondition' => 'required',
+            'transportcondition' => 'required',
             // 'image'=>'required',
         ]);
 
@@ -99,6 +104,9 @@ class TourPackagesController extends Controller
             'duration' => $request->duration,
             'description' => $request->description,
             'price' => $request->price,
+            'hotelcondition' => $request->hotelcondition,
+            'transportcondition' => $request->transportcondition,
+            'spotnames' => $request->spotnames,
             'image' => $fileName
 
         ]);

@@ -10,6 +10,9 @@
                 <th scope="col">Code</th>
                 <th scope="col">Duration</th>
                 <th scope="col">Description</th>
+                <th scope="col">Hotel</th>
+                <th scope="col">Transport</th>
+                <th scope="col">Spot</th>
                 <th scope="col">Price</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
@@ -23,6 +26,9 @@
                     <td>{{ $package->code }}</td>
                     <td>{{ $package->duration }} Days</td>
                     <td>{{ $package->description }}</td>
+                    <td>{{ $package->hotelcondition }}</td>
+                    <td>{{ $package->transportcondition }}</td>
+                    <td>{{ $package->spotnames }}</td>
                     <td>{{ $package->price }} BDT</td>
                     <td>
                         <img style="border-radius: 15%" width="70px"  src="{{ url('/uploads//' . $package->image) }}" alt="">
@@ -36,7 +42,7 @@
             @endforeach
         </tbody>
     </table>
-    
+
     <div class="w-25 mx-auto">
         {{ $packages->links() }}
     </div>

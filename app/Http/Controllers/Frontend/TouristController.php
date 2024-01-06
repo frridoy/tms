@@ -91,5 +91,15 @@ class TouristController extends Controller
         $mybooking=bookingmodel::where('tourist_id', $id)->get();
         return view('frontend.pages.TouristProfile.MyBooking',compact('mybooking'));
     }
+    public function myBookingview($id){
+        $bookings=bookingmodel::find($id);
+        return view('frontend.pages.TouristProfile.view', compact('bookings'));
+        }
+        // public function myBookingreport($id) {
+        //     $bookings=bookingmodel::find($id);
+        //     return view('frontend.pages.TouristProfile.report', compact('bookings'));
+        // }
+
+
 }
 

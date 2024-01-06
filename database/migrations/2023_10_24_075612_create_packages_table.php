@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('name',20);
-            $table->string('code',10);
+            $table->string('name',30);
+            $table->string('code',30)->unique();
             $table->string('duration');
             $table->text('description')->nullable();
             $table->integer('price');
-            $table->string('image',)->nullable();
+            $table->text('hotelcondition');
+            $table->text('transportcondition');
+            $table->text('spotnames');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
 

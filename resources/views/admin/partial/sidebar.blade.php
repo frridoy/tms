@@ -42,31 +42,7 @@
                     {{-- </ul> --}}
 
 
-                    <li class="menu-item">
-                        <a href="{{ route('location') }}" class="menu-link"> <span class="menu-text">Location</span></a>
-                    </li>
 
-
-
-
-
-                    <li class="menu-item">
-                        <a href="{{ route('hotel') }}" class="menu-link"> <span class="menu-text">Hotel</span></a>
-                    </li>
-
-
-                    <li class="menu-item has-child">
-                        <a href="{{ route('spot') }}" class="menu-link"><span class=""></span> <span
-                                class="menu-text">Spot</span></a>
-                        {{-- <ul class="menu"> --}}
-                    </li>
-
-                    <li class="menu-item has-child">
-                        <a href="{{ route('transport') }}" class="menu-link"><span class=""></span>
-                            <span class="menu-text">Transport</span></a>
-                        {{-- <ul class="menu"> --}}
-                        {{-- </ul> --}}
-                    </li>
 
                     <li class="menu-item">
                         <a href="{{ route('tourist.booking') }}" class="menu-link"> <span class="menu-text">Tourist

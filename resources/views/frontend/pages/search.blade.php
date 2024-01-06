@@ -1,30 +1,29 @@
 @extends('frontend.master')
 @section('content')
 
-<div class="popular-pack no-bgpack container-fluid">
-    <div class="container">
+<div class="popular-pack  container-fluid bg-image p-0">
+    <div class="p-4">
         <div class="session-title">
 
-                <div class="container mt-4">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-12 text-center">
 
-                            <h4 class="font-weight-bold text-success mb-4"> Your Search Result: {{ request()->search }} matched with {{$packages->count()}} Package !</h4>
+                        <h4 class="font-weight-bold text-success mb-4"> Your Search Result: {{ request()->search }}
+                            matched with {{$packages->count()}} Package !</h4>
 
-                        </div>
                     </div>
                 </div>
+            </div>
 
-<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-@if ($packages->count() > 0)
+                @if ($packages->count() > 0)
 
-{{-- problem solution --}}
-     {{-- @foreach ($packages as $package) --}}
 
-        </div>
-        <div class="row pack-row">
-            @foreach ($packages as $package)
+            </div>
+            <div class="row pack-row">
+                @foreach ($packages as $package)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="pack-col">
                         <img src="{{ url('/uploads//' . $package->image) }}" alt="">
@@ -64,33 +63,20 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @endforeach
 
+            </div>
         </div>
     </div>
-</div>
 
-{{-- problem solution--}}
-{{-- @endforeach --}}
 
-@else
 
-<h2 class="font-weight-bold text-danger mb-4">No Package found!!!</h2>
+    @else
 
-@endif
+    <h2 class="font-weight-bold text-danger mb-4">No Package found!!!</h2>
+
+    @endif
 
 
 </div>
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-

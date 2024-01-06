@@ -40,7 +40,7 @@ class TouristProfileController extends Controller
 
         ]);
         notify()->success('Profile Updated Sucessfully.');
-        return redirect()->route('home');
+        return redirect()->route('tourist.profile');
     }
 }
 

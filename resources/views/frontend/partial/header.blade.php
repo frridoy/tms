@@ -1,44 +1,35 @@
 <header class="continer-fluid ">
 
-    <div id="menu-jk" class="header-bottom">
+    <div id="menu-jk" class="header-bottom row align-items-center" style="height: 4rem;" >
         <div class="container">
-            <div class="row nav-row align-items-center justify-content-between" >
-                <div class="col-lg-2 col-md-2 logo">
-                    <a href="...">
-                        {{-- <img src="{{url('forntend/')}}/assets/images/logo.png" alt=""> --}}
-                        {{-- for logo --}}
-                        <a data-toggle="collapse" data-target="#menu" href="..."><i class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
-                    </a>
+            <div class="row nav-row align-items-center">
 
-
-                </div>
-
-                <div class = " col-md-8 p-0 m-0">
+                <div class=" col-md-9 p-0 m-0 ">
                     <div id="menu" class="col-lg-9 col-md-6 d-none d-lg-block nav-col">
 
                         <ul class="navbad">
 
-                        @guest
+                            @guest
                             <li class="nav-item active p-0 m-0">
-                                <a class="nav-link" href="{{route('registration')}}">Sign Up
+                                <a class="nav-link" href="{{route('registration')}}" style="font-size:13px;">Sign Up
                                 </a>
                             </li>
                             <li class="nav-item active p-0 m-0">
                                 <a class="nav-link" href="{{route('tourist.login')}}">Sign In
                                 </a>
                             </li>
-                        @endguest
+                            @endguest
 
-                        @auth
-                        <li class="nav-item active p-0 m-0">
-                            <a class="nav-link" href="{{route('tourist.logout')}}">Logout
-                            </a>
-                        </li>
-                        <li class="nav-item p-0 m-0">
-                            <a class="nav-link" href="{{route('tourist.profile')}}">My Profile</a>
-                        </li>
+                            @auth
+                            <li class="nav-item active p-0 m-0">
+                                <a class="nav-link" href="{{route('tourist.logout')}}">Logout
+                                </a>
+                            </li>
+                            <li class="nav-item p-0 m-0">
+                                <a class="nav-link" href="{{route('tourist.profile')}}">My Profile</a>
+                            </li>
 
-                        @endauth
+                            @endauth
 
                             <li class="nav-item active p-0 m-0">
                                 <a class="nav-link" href="{{route('home')}}">Home
@@ -59,25 +50,27 @@
                         </ul>
 
 
-            </div>
+                    </div>
 
-            </div>
+                </div>
 
                 <div class="container mt-0 col-md-2 justify-content-end mr-0 p-0 m-0 mb-0">
                     <div class="row justify-content-end">
-                      <div class="col-md-14">
-                        <form action="{{ route('package.search') }}" method="get" class="form-inline">
-                          <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search Packages..." name="search">
-                            <div class="input-group-append">
-                              <button type="submit" class="btn btn-success">Search</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
+                        <div class="col-md-14">
+                            <form action="{{ route('package.search') }}" method="get" class="form-inline">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search Packages..."
+                                        name="search">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-danger">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                  </div>
+                </div>
 
+            </div>
         </div>
     </div>
 </header>
