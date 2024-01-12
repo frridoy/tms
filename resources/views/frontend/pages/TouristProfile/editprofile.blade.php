@@ -1,6 +1,7 @@
 @extends('frontend.master')
 @section('content')
-    <br>
+<br> <br> <br>
+
     <form action="{{ route('touristprofile.update', $touristprofileval->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
@@ -21,7 +22,8 @@
                 .login-panel {
                     max-width: 400px;
                     margin: auto;
-                    margin-top: 100px;
+                    /* margin-top: 50px; */
+                    margin-bottom: 20px;
                     background-color: #ffffff;
                     padding: 20px;
                     border-radius: 8px;
@@ -71,7 +73,7 @@
 
         <body>
 
-            <div class="container">
+            <div class="container ">
                 <div class="login-panel">
                     <h2> Update Your Profile </h2>
 
@@ -92,7 +94,7 @@
                     </div>
                     <div class="form-group">
                         <label for="contact">Contact No:</label>
-                        <input type="tel" value="{{ $touristprofileval->contact }}" class="form-control" id="contact"
+                        <input type="tel" pattern="[0-9]{1,13}" value="{{ $touristprofileval->contact }}" class="form-control" id="contact"
                             name="contact" placeholder="Enter contact number">
                     </div>
                     <div class="form-group">
@@ -104,13 +106,14 @@
     </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
 
     </body>
 
     </html>
     </form>
-    <br>
+
+
 @endsection

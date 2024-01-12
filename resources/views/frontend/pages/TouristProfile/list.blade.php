@@ -99,7 +99,7 @@
  @extends('frontend.master')
 
 @section('content')
-    <br>
+    <br> <br> <br>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -170,7 +170,7 @@
             }
 
             hr {
-                margin: 10px 0;
+                margin: 10px ;
             }
         </style>
     </head>
@@ -185,6 +185,8 @@
                 <hr>
                 <div class="user-info">
                     <h4>{{ auth()->user()->name }}</h4>
+                    <hr>
+                    <h6> Your ID: {{auth()->user()->id}}</h6>
                     <hr>
                     <h6>Email: {{ auth()->user()->email }}</h6>
                     <hr>

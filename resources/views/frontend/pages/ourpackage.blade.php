@@ -65,17 +65,17 @@
 
         <div class="row pack-row">
           @foreach ($packages as $package )
-          <div class="col-lg-4 col-md-6 col-sm-6">
+          <div class="col-lg-4 col-md-6 mb-5 col-sm-6">
             <div class="pack-col">
                 <img src="{{ url('/uploads//' . $package->image) }}" alt="" >
                 <div class="revire row no-margin">
-                    <ul class="rat">
+                    {{-- <ul class="rat">
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
-                    </ul>
+                    </ul> --}}
 
                     <span class="pric">
                         {{$package->price}}.00 BDT
@@ -90,7 +90,7 @@
 
 
                 </div>
-                <div class="options row no-margin">
+                {{-- <div class="options row no-margin">
                     <ul>
                         <li><i class="fas fa-car"></i></li>
                         <li><i class="fab fa-fly"></i></li>
@@ -99,7 +99,7 @@
                         <li><i class="far fa-bell"></i></li>
 
                     </ul>
-                </div>
+                </div> --}}
             </div>
         </div>
           @endforeach

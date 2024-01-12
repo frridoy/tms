@@ -15,6 +15,21 @@ class TouristController extends Controller
     }
     public function store(Request $request)
     {
+        $validate=Validator::make($request->all(),[
+            'name'=>'required',
+            'email'=>'required|email',
+            'password'=>'required|min:4|max:10',
+            'contact'=>'required|string|max:11|min:11|regex:/^(?:\+?88)?01[3-9]\d{8}$/',
+
+
+        ]);
+
+        if($validate->fails())
+        {
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
+        }
+
         // dd($request->all());
         $fileName=null;
         if($request->hasFile('image'))
@@ -95,6 +110,42 @@ class TouristController extends Controller
         $bookings=bookingmodel::find($id);
         return view('frontend.pages.TouristProfile.view', compact('bookings'));
         }
+        public function edit($id){
+            $bookings=bookingmodel::find($id);
+            return view('frontend.pages.TouristProfile.editbooking', compact('bookings'));
+           }
+           public function update(Request $request,$id){
+            $bookings=bookingmodel::find($id);
+            if ($bookings){
+                $fileName=$bookings->image;
+                if($request->hasFile('image'))
+                {
+                    $file=$request->file('image');
+                    $fileName=date('Ymdhis').'.'.$file->getClientOriginalExtension();
+                    $file->storeAs('/uploads',$fileName);
+
+                }
+                $bookings->update([
+                    'email' => $request->email,
+                    'number' => $request->number,
+                    'address' => $request->address,
+                    'pickupdate' => $request->pickupdate,
+                    // 'chooseroom' => $request->chooseroom,
+                    'choosefoodmenu' => $request->choosefoodmenu,
+                    'image' => $fileName
+
+                ]);
+                notify()->success('Booking Info Updated Sucessfully.');
+                return redirect()->route('home');
+            }
+
+        }
+
+
+
+
+
+
         // public function myBookingreport($id) {
         //     $bookings=bookingmodel::find($id);
         //     return view('frontend.pages.TouristProfile.report', compact('bookings'));
@@ -102,4 +153,5 @@ class TouristController extends Controller
 
 
 }
+
 

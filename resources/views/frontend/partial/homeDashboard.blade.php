@@ -7,12 +7,28 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
 
+                    <div>
+                        <h2 id='carousel-text' style="font-size:70px; text-align:center;
+                        font-size: 70px;
+
+
+
+                        margin-top: 195px;
+                        text-align: center;
+                        position: absolute;
+                        margin-left: 138px;
+                        font-weight:800;
+                        color:white;
+                        ";>Tourism Management System</h2>
+                    </div>
+
                         <img src="{{ asset('assests/images/Sundharbhan.jpg')}}" class="d-block w-100" style="width: 100%; height: 100vh; object-fit: cover;"
                             alt="...">
-                        <div class="detail-card">
+                        {{-- <div class="detail-card">
                             <p> Look deep into nature, and then you will understand everything better.
                             </p>
-                        </div>
+                        </div> --}}
+
 
                 </div>
 
@@ -28,11 +44,8 @@
 
     <!-- ################# Our Packages Starts Here #######################--->
 
-
-
-
-    <div class="popular-pack container-fluid bg-image p-0" >
-        <div class=" p-4">
+    <div class="container popular-pack container-fluid bg-image p-0">
+        <div class=" p-4" style="margin-bottom: 20px;" >
         {{-- style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"> --}}
 
             {{-- <div class=" p-4" style="background-color: black; margin: 0;"> --}}
@@ -42,47 +55,42 @@
             </div>
             <div class="row pack-row">
               @foreach ($packages as $package )
-              <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="col-lg-4 col-md-6 col-sm-6 mb-5 card-container">
                 <div class="pack-col">
                     <img src="{{ url('/uploads//' . $package->image) }}" alt="" >
                     <div class="revire row no-margin">
-                        <ul class="rat">
+                        {{-- <ul class="rat">
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
                             <li><i class="fa fa-star"></i></li>
-                        </ul>
+                        </ul> --}}
 
-                        <span class="pric">
-                            {{$package->price}}.00 BDT
+                        <span class="text-primary" style="font-size:20px">
+                            Initial Price: {{$package->price}}.00 BDT
                         </span>
                     </div>
                     <div class="detail row no-margin">
                         <h4>{{$package->name}}</h4>
-                        <p> Duration: {{$package->duration}} Days</p>
+                        <p style="font-size: 18px;"> Duration: {{$package->duration}} Days</p>
                         <div class="text-center" >
                             <button class="btn btn-outline-success mt-2 "><a href="{{route('singlepackage.view',$package->id)}}">View The Package</a></button>
                         </div>
-
-
                     </div>
-                    <div class="options row no-margin">
+                    {{-- <div class="options row no-margin">
                         <ul>
                             <li><i class="fas fa-car"></i></li>
+                            <li><i class="fas fa-umbrella-beach"></i></li>
                             <li><i class="fab fa-fly"></i></li>
                             <li><i class="fas fa-cocktail"></i></li>
                             <li><i class="fas fa-umbrella-beach"></i></li>
-                            <li><i class="far fa-bell"></i></li>
 
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
               @endforeach
-
-
-
             </div>
         </div>
     </div>
@@ -166,6 +174,30 @@
             </div>
         </div>
     </div>
+
+    {{-- <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var textValues = [
+                "Discover the beauty of nature with Tourism Management System.",
+                "Explore amazing destinations with our affordable packages.",
+                "Book your dream vacation today!"
+            ];
+            var currentIndex = 0;
+            var carouselElement = document.getElementById('carousel-text');
+
+            function updateText() {
+                carouselElement.innerHTML = textValues[currentIndex];
+            }
+
+            function nextText() {
+                currentIndex = (currentIndex + 1) % textValues.length;
+                updateText();
+            }
+
+            setInterval(nextText, 3000); // Change text every 3 seconds (adjust as needed)
+            updateText(); // Initial update
+        });
+    </script> --}}
 
 
 @endsection

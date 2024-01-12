@@ -50,7 +50,7 @@
      <style>
          .notify {
              z-index: 9999;
-             justify-content: center;
+             justify-content: right;
          }
      </style>
 

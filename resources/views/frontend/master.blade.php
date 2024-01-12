@@ -18,8 +18,14 @@
     <style>
         .notify {
             z-index: 9999;
-            justify-content: center;
+            justify-content: right;
         }
+        /* .card-container {
+  width: 250px;
+  height: 400px;
+  overflow: hidden;
+} */
+
     </style>
 </head>
 
@@ -38,7 +44,7 @@
 
     @notifyJs
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    
+
     {{-- for ssl script --}}
     <script>
         (function(window, document) {

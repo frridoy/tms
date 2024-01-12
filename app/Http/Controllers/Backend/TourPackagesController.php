@@ -14,7 +14,9 @@ class TourPackagesController extends Controller
     public function tpackage()
     {
 
-        $packages = Package::paginate(5);
+        $packages = Package::all();
+        // decending
+        // $packages = Package::latest()->get();
         return view('admin.pages.TPackage.tpackage', compact('packages'));
     }
 
@@ -22,6 +24,7 @@ class TourPackagesController extends Controller
     {
         return view('admin.pages.TPackage.form');
     }
+
     public function delete($id){
      $package= Package::find($id);
      if ($package){
@@ -30,6 +33,8 @@ class TourPackagesController extends Controller
      notify()->success('Tour Package Deleted Sucessfully.');
      return redirect()->route('tourpackages');
     }
+
+
     public function view($id){
         $package=Package::find($id);
         return view('admin.pages.Tpackage.view', compact('package'));
@@ -39,6 +44,8 @@ class TourPackagesController extends Controller
       $package=Package::find($id);
       return view('admin.pages.Tpackage.edit', compact('package'));
      }
+
+
      public function update(Request $request,$id){
     $package=Package::find($id);
     if ($package){
@@ -81,12 +88,13 @@ class TourPackagesController extends Controller
             'price'=>'required',
             'hotelcondition' => 'required',
             'transportcondition' => 'required',
-            // 'image'=>'required',
+
         ]);
 
         if($validate->fails())
         {
-            return redirect()->back()->with('myError',$validate->getMessageBag());
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
         }
 
         $fileName=null;

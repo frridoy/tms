@@ -1,8 +1,6 @@
 @extends('frontend.master')
-
-
 @section('content')
-    <br>
+    <br> <br> <br>
     <form action="{{ route('registration.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
@@ -19,10 +17,10 @@
                     background-color: #f8f9fa;
                 }
 
+
                 .login-panel {
                     max-width: 400px;
                     margin: auto;
-                    margin-top: 100px;
                     background-color: #ffffff;
                     padding: 20px;
                     border-radius: 8px;
@@ -95,14 +93,14 @@
                         </div>
                         <div class="form-group">
                             <label for="contact">Contact No:</label>
-                            <input type="tel" class="form-control" id="contact" name="contact"
+                            <input type="tel" required pattern="[0-9]{1,13}" class="form-control" id="contact" name="contact"
                                 placeholder="Enter contact number">
                         </div>
-                            <div class="form-group">
-                                <label for="image">Image:</label>
-                                <input type="file" class="form-control" id="image" name="image"
-                                    placeholder="Enter image">
-                            </div>
+                        <div class="form-group">
+                            <label for="image">Image:</label>
+                            <input type="file" accept="image/*" class="form-control" id="image" name="image"
+                                placeholder="Enter image">
+                        </div>
 
                         {{-- <button type="submit" class="btn btn-primary btn-block">Submit</button> --}}
 

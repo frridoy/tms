@@ -1,7 +1,7 @@
 @extends('admin.master')
  @section('content')
 
- <div class="container">
+ <div class="container mb-5">
     <h2>Create Package</h2>
     <form action="{{ route('tourpackages.store') }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -10,12 +10,12 @@
             <input type="text" class="form-control" id="" name="name" required>
         </div>
         <div class="form-group">
-            <label for="code">Code:</label>
+            <label for="code"> Package Code:</label>
             <input type="text" class="form-control" id="" name="code" required>
         </div>
         <div class="form-group">
             <label for="duration">Duration:</label>
-            <input type="text" class="form-control" id="" name="duration" required>
+            <input type="number" class="form-control" id="" name="duration" required>
         </div>
         <div class="form-group">
             <label for="destination">Description:</label>
@@ -35,11 +35,11 @@
             <select class="form-control" id="" name="transportcondition" required>
                 <option>Bus AC</option>
                 <option>Bus Non-AC</option>
-                <option>Sleeper Bus</option>
+                {{-- <option>Sleeper Bus</option>
                 <option>AC Train</option>
                 <option>Non-AC Train</option>
                 <option>Lunch Non AC Cabin</option>
-                <option>Lunch AC Cabin</option>
+                <option>Lunch AC Cabin</option> --}}
             </select>
         </div>
         <div class="form-group">
@@ -49,15 +49,15 @@
 
         <div class="form-group">
             <label for="price">Price:</label>
-            <input type="number" class="form-control" id="" name="price" required>
+            <input type="number" class="form-control" id="" min="0" name="price" required>
         </div>
         <div class="form-group">
             <label for="image">Image:</label>
-            <input type="file" class="form-control-file" id="" name="image">
+            <input type="file" accept="image/*" class="form-control-file" id="" name="image">
         </div>
-
+{{-- <div style="text-align:center;"> --}}
         <button type="submit" class="btn btn-primary">Submit</button>
-
+    {{-- </div> --}}
     </form>
 </div>
  @endsection

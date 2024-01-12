@@ -176,7 +176,7 @@
                 <img src="{{url('/uploads//' . $package->image) }}" alt="">
             </div>
             <hr>
-            <h4> Package: {{$package->name}}</h4>
+            <h4> {{$package->name}}</h4>
                 <hr>
             <h6> Package Code : {{$package->code}}</h6>
                 <hr>

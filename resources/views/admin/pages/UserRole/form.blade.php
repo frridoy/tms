@@ -13,9 +13,7 @@
                 <div class="input-group">
                     <select name="role" class="custom-select form-control border-0 bg-light" id="" required>
                         <option selected disabled>Select Role...</option>
-                        <option value="Admin">Manager</option>
-                        <option value="Admin">Salesman</option>
-                        <option value="Admin">Account</option>
+                        <option value="Admin">Admin</option>
 
                     </select>
                 </div>

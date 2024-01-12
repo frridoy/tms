@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
+use App\Models\touristinquirymodel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FrontendOurPackageController extends Controller
 {
@@ -15,7 +17,7 @@ class FrontendOurPackageController extends Controller
 
         return view('frontend.pages.aboutus');
     }
-    public function contactus(){
-        return view('frontend.pages.contactus');
-    }
+    
 }
+
+

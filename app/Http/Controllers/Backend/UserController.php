@@ -31,7 +31,7 @@ class UserController extends Controller
             notify()->success('Login Sucessfully.');
             return redirect()->route('dashboard');
         }
-        notify()->error('Invalid User Email or Password.');
+        notify()->error('Invalid Email or Password.');
         return redirect()->back();
         // ->withErrors('Invalid User Email or Password');
     }
@@ -65,7 +65,8 @@ class UserController extends Controller
 
         if($validate->fails())
         {
-            return redirect()->back()->with('myError',$validate->getMessageBag());
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
         }
         //end validator
 //for image
@@ -87,4 +88,14 @@ class UserController extends Controller
         notify()->success('User Role Created Sucessfully.');
         return redirect()->route('user.role');
     }
+    public function delete($id){
+        $items= User::find($id);
+        if ($items){
+            $items->delete();
+        }
+        notify()->success('User Deleted Sucessfully.');
+        return redirect()->route('user.role');
+       }
+
+
 }

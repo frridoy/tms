@@ -3,6 +3,7 @@
 use App\Http\Controller\SslCommerzPaymentController as ControllerSslCommerzPaymentController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BookingController;
+use App\Http\Controllers\Backend\ContactUsController;
 use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\dashboardController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\Backend\TourPackagesController;
 use App\Http\Controllers\Backend\ManageBookingController;
 use App\Http\Controllers\Backend\ManagePagesController;
 use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\Backend\ReservationController;
 use App\Http\Controllers\Backend\SpotController;
 use App\Http\Controllers\Backend\TransportController;
 use App\Http\Controllers\Backend\UserroleController;
@@ -86,6 +88,8 @@ Route::put('/tourist/profile/update/{id}', [TouristProfileController::class, 'to
 //for see the tourist booking info
 Route::get('/my/booking/{id}', [TouristController::class, 'myBooking'])->name('my.booking');
 Route::get('/my/booking/view/{id}', [TouristController::class, 'myBookingview'])->name('myBooking.view');
+Route::get('/my/booking/edit/{id}', [TouristController::class, 'edit'])->name('myBooking.edit');
+Route::put('/my/booking/update/{id}', [TouristController::class, 'update'])->name('myBooking.update');
 
 //report for tourist
 
@@ -101,7 +105,11 @@ Route::get('/package/serach', [FrontendHomeController::class, 'search'])->name('
 
 Route::get('/ourpackage', [FrontendOurPackageController::class, 'ourpackage'])->name('ourpackage.website');
 Route::get('/aboutus', [FrontendOurPackageController::class, 'aboutus'])->name('aboutus.website');
-Route::get('/contactus', [FrontendOurPackageController::class, 'contactus'])->name('contactus.website');
+
+//contactus
+
+
+Route::post('/contactus/store', [ContactUsController::class, 'store'])->name('contactus.store');
 
 // SSLCOMMERZ Start
 
@@ -129,6 +137,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/select/{single_pack_id}', [SinglePackageViewController::class, 'select'])->name('select');
 
     // Other routes that require authentication
+    Route::get('/contactus', [ContactUsController::class, 'contactus'])->name('contactus.website');
 
 
 
@@ -172,17 +181,31 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/tourpackage/view/{id}', [TourPackagesController::class, 'view'])->name('package.view');
 
 
+            //Reservation
+            Route::get("/reservation/list", [ReservationController::class, 'list'])->name('reservation.list');
+            Route::get("/reservation/form", [ReservationController::class, 'form'])->name('reservation.form');
+            Route::post("/reservation/form/store", [ReservationController::class, 'store'])->name('reservation.store');
+            Route::get("/reservation/ht/view/{id}", [ReservationController::class, 'view'])->name('reservation.view');
+            //edit
+            Route::get("/reservation/ht/delete/{id}", [ReservationController::class, 'delete'])->name('reservation.delete');
+
+
             //For User Role
 
             Route::get('/user/role', [UserController::class, 'userrole'])->name('user.role');
             Route::get('/user/role/form', [UserController::class, 'create'])->name('userrole.form');
             Route::post('/user/role/form/store', [UserController::class, 'store'])->name('userrole.store');
+            Route::get('/user/role/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
 
 
             //for booking report
 
 
             Route::get('/tourist/booking/report', [ReportController::class, 'bookingreport'])->name('booking.report');
+
+
+            //contactus inquires
+            Route::get('/contactus/list', [ContactUsController::class, 'contactuslist'])->name('contactus.list');
 
 
             //Admin_Profile
@@ -193,6 +216,10 @@ Route::group(['prefix' => 'admin'], function () {
             //website reservation from to see the admin list
 
             Route::get('/tourist/booking', [SinglePackageViewController::class, 'touristbooking'])->name('tourist.booking');
+            //tourist booking delete
+
+
+            Route::get('/tourist/booking/done/{id}', [SinglePackageViewController::class, 'done'])->name('pending.done');
 
             //for tourist search
             Route::get('/tourist/booking/search', [SinglePackageViewController::class, 'search'])->name('touristbooking.search');
@@ -202,6 +229,7 @@ Route::group(['prefix' => 'admin'], function () {
 
             Route::get('/tourist/booking/view/{id}', [BookingController::class, 'view'])->name('touristbooking.view');
             Route::get('/tourist/booking/delete/{id}', [BookingController::class, 'delete'])->name('touristbooking.delete');
+
         });
     });
 });

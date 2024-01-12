@@ -7,7 +7,7 @@
             <button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside"><span
                     class="user-avatar user-avatar-lg"><img src="assets/images/avatars/profile.jpg" alt=""></span>
                 <span class="account-icon"><span class="fa fa-caret-down fa-lg"></span></span> <span
-                    class="account-summary"><span class="account-name">Beni Arisandi</span> <span
+                    class="account-summary"><span class="account-name">FR Ridoy</span> <span
                         class="account-description">Marketing Manager</span></span></button>
             <div id="dropdown-aside" class="dropdown-aside collapse">
 
@@ -45,19 +45,43 @@
 
 
                     <li class="menu-item">
-                        <a href="{{ route('tourist.booking') }}" class="menu-link"> <span class="menu-text">Tourist
+                        <a href="{{ route('tourist.booking') }}" class="menu-link"> <span class="menu-text"> Tourist
                                 Booking</span></a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="{{ route('user.role') }}" class="menu-link"> <span class="menu-text">User</span></a>
+                        <a href="{{ route('reservation.list') }}" class="menu-link"> <span class="menu-text">Tourist
+                                H & T</span></a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="{{ route('home') }}" class="menu-link"> <span class="menu-text">Website</span></a>
+                        <a href="{{ route('user.role') }}" class="menu-link"> <span class="menu-text">User Role</span></a>
                     </li>
 
-                    {{-- </ul> --}}
+                    <li class="menu-item">
+                        <a href="{{ route('contactus.list') }}" class="menu-link"> <span class="menu-text">Tourist Inquiries</span></a>
+                    </li>
+
+
+                    <li class="menu-item">
+                        <a href="{{ route('booking.report') }}" class="menu-link"> <span class="menu-text">Report Genarate</span></a>
+                    </li>
+
+
+                    {{-- <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Report Generate
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="{{ route('booking.report') }}">Tourist All Booking</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div> --}}
+
+
+
             </nav>
         </div>
 

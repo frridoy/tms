@@ -5,10 +5,11 @@
     <table class="table text-center align-center">
         <thead>
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">SI</th>
                 <th scope="col">Name</th>
                 <th scope="col">Role</th>
                 <th scope="col">Email</th>
+                <th scope="col"> User ID</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
                 {{-- <th scope="col">Password</th>  --}}
@@ -22,17 +23,18 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->role }}</td>
                     <td>{{ $item->email }}</td>
+                    <td>{{ $item->id }}</td>
                     <td>
-                        <img style="border-radius: 15%" width="70px" src="{{ url('/uploads//' . $item->image) }}"
+                        <img style="border-radius: 15%" width="40px" src="{{ url('/uploads//' . $item->image) }}"
                             alt="">
                     </td>
-                    
+
 
                     <td>
                         {{-- <a href="{{route('package.view',$package->id)}}"class="btn btn-primary">View</a>
                         <a href="{{route('package.edit',$package->id)}}"class="btn btn-warning">Edit</a>
                         <a href="{{route('package.delete',$package->id)}}"class="btn btn-danger">Delete</a> --}}
-                        <a href=""class="btn btn-info">View</a>
+                        <a href="{{route('user.delete',$item->id)}}"class="btn btn-danger">Delete</a>
                     </td>
                     {{-- <td>{{ $item->password }}</td> --}}
             </tr>

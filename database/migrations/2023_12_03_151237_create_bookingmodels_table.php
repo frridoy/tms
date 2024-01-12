@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('bookingmodels', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('tourist_id');
+            $table->unsignedBigInteger('tourist_id');
             $table->string('email');
-            $table->integer('number');
+            $table->string('number');
             $table->string('image')->nullable();
             $table->text('address');
             $table->date('pickupdate');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->double('amount');
             $table->string('payment_status');
             $table->string('transaction_id');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

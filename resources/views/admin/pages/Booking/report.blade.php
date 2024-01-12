@@ -9,11 +9,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">SI</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Number</th>
-                    <th scope="col">Image</th>
+                    {{-- <th scope="col">Image</th> --}}
                     <th scope="col">Address</th>
                     <th scope="col">Pickupdate</th>
                     <th scope="col">Code</th>
@@ -33,9 +33,9 @@
                         <td>{{ $booking->name }}</td>
                         <td>{{ $booking->email }}</td>
                         <td>{{ $booking->number }}</td>
-                        <td>
+                        {{-- <td>
                             <img style="border-radius: 15%" width="70px"  src="{{ url('/uploads//' . $booking->image) }}" alt="">
-                        </td>
+                        </td> --}}
                         <td>{{ $booking->address }}</td>
                         <td>{{ $booking->pickupdate }}</td>
                         <td>{{ $booking->code }}</td>

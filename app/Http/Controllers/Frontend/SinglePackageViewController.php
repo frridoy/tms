@@ -35,6 +35,22 @@ class SinglePackageViewController extends Controller
         return view('admin.pages.Booking.list', compact('bookings'));
     }
 
+    //approve
+
+    public function done ($id)
+    {
+        $booking=bookingmodel::find($id);
+        $booking->status='given';
+        $booking->save();
+
+        notify()->success('Done transport and hotel');
+        return redirect()->back();
+    }
+
+    //end approve
+
+
+
     public function create()
     {
         return view('frontend.pages.SelectTourist.select');
@@ -126,19 +142,20 @@ class SinglePackageViewController extends Controller
 
         $validate=Validator::make($request->all(),[
 
-            'email'=>'required',
-            'number'=>'required',
+            'email'=>'required|email',
+            'number'=>'required|regex:/^01[3-9][0-9]{8}$/|numeric',
             'address'=>'required',
             'pickupdate'=>'required',
             'chooseroom' => 'required',
             'choosefoodmenu' =>'required',
-            'quantity' => 'required',
+            'quantity' => 'required|numeric|between:1,20',
 
         ]);
 
         if($validate->fails())
         {
-            return redirect()->back()->with('myError',$validate->getMessageBag());
+            notify()->error($validate->getMessageBag());
+            return redirect()->back();
         }
         $fileName=null;
         if($request->hasFile('image'))
@@ -151,24 +168,101 @@ class SinglePackageViewController extends Controller
 
     {
         //dd($request->all());
-        $booking = bookingmodel::create([
-            'name' => auth()->user()->name,
-            'tourist_id' => auth()->user()->id,
-            // 'email' => auth()->user()->email,
-            // 'name' => $request->name,
-            'email' => $request->email,
-            'number' => $request->number,
-            'address' => $request->address,
-            'pickupdate' => $request->pickupdate,
-            'code' => $request->code,
-            'chooseroom' => $request->chooseroom,
-            'choosefoodmenu' => $request->choosefoodmenu,
-            'amount' => $request->price * $request->quantity,
-            'transaction_id' => date('YmdHis'),
-            'payment_status' => 'Pending',
-            'quantity' => $request->quantity,
-            'image' => $fileName
-        ]);
+        // $booking = bookingmodel::create([
+        //     'name' => auth()->user()->name,
+        //     'tourist_id' => auth()->user()->id,
+        //     // 'email' => auth()->user()->email,
+        //     // 'name' => $request->name,
+        //     'email' => $request->email,
+        //     'number' => $request->number,
+        //     'address' => $request->address,
+        //     'pickupdate' => $request->pickupdate,
+        //     'code' => $request->code,
+        //     'chooseroom' => $request->chooseroom,
+        //     'choosefoodmenu' => $request->choosefoodmenu,
+        //     'amount' => $request->price * $request->quantity,
+        //     'transaction_id' => date('YmdHis'),
+        //     'payment_status' => 'Pending',
+        //     'quantity' => $request->quantity,
+        //     'image' => $fileName
+        // ]);// ...
+
+
+// only roomupdate
+$roomType = $request->chooseroom;
+$baseAmount = $request->price * $request->quantity;
+
+if ($roomType == "Single Bed for Single person") {
+    // Add additional amount for single bed
+    $amount = $baseAmount + 1000 * $request->quantity;
+} else {
+    // Double Bed or share
+    $amount = $baseAmount;
+}
+
+$booking = bookingmodel::create([
+    'name' => auth()->user()->name,
+    // 'email' => auth()->user()->email,
+    // 'number' => auth()->user()->contact,
+    'tourist_id' => auth()->user()->id,
+    'email' => $request->email,
+    'number' => $request->number,
+    'address' => $request->address,
+    'pickupdate' => $request->pickupdate,
+    'code' => $request->code,
+    'chooseroom' => $roomType, // Save the room type
+    'choosefoodmenu' => $request->choosefoodmenu,
+    'amount' => $amount,
+    'transaction_id' => date('YmdHis'),
+    'payment_status' => 'Pending',
+    'quantity' => $request->quantity,
+    'image' => $fileName
+]);
+
+//close room  and food update
+
+// ...
+// $roomType = $request->chooseroom;
+// $baseAmount = $request->price * $request->quantity;
+
+// // Additional amount for single bed
+// $additionalAmountRoom = ($roomType == "Single Bed for Single person") ? 1000 * $request->quantity : 0;
+
+// // Additional amount for food menu
+// $additionalAmountFood = 0;
+// if ($roomType == "Single Bed for Single person") {
+//     $foodMenu = $request->choosefoodmenu;
+//     if ($foodMenu == "Pure Vagetarian") {
+//         $additionalAmountFood = 1000 * $request->quantity;
+//     } elseif ($foodMenu == "Non-Vegetarian") {
+//         $additionalAmountFood = 1500 * $request->quantity; // 1000 for room + 500 for Non-Vegetarian
+//     }
+// } elseif ($roomType == "Double Bed for Couple" && $request->choosefoodmenu == "Vegatarian") {
+//     $additionalAmountFood = 500 * $request->quantity;
+// }
+
+// // Calculate the total amount
+// $amount = $baseAmount + $additionalAmountRoom + $additionalAmountFood;
+
+// $booking = bookingmodel::create([
+//     'name' => auth()->user()->name,
+//     'number' => auth()->user()->contact,
+//     'tourist_id' => auth()->user()->id,
+//     'email' => $request->email,
+//     'contact' => $request->contact,
+//     'address' => $request->address,
+//     'pickupdate' => $request->pickupdate,
+//     'code' => $request->code,
+//     'chooseroom' => $roomType,
+//     'choosefoodmenu' => $request->choosefoodmenu,
+//     'amount' => $amount,
+//     'transaction_id' => date('YmdHis'),
+//     'payment_status' => 'Pending',
+//     'quantity' => $request->quantity,
+//     'image' => $fileName
+// ]);
+
+
     }
 
         $this->payment($booking);

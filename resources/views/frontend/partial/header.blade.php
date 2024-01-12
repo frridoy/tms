@@ -11,11 +11,11 @@
 
                             @guest
                             <li class="nav-item active p-0 m-0">
-                                <a class="nav-link" href="{{route('registration')}}" style="font-size:13px;">Sign Up
+                                <a class="nav-link" href="{{route('registration')}}" >Sign Up
                                 </a>
                             </li>
                             <li class="nav-item active p-0 m-0">
-                                <a class="nav-link" href="{{route('tourist.login')}}">Sign In
+                                <a class="nav-link" href="{{route('tourist.login')}}">Log In
                                 </a>
                             </li>
                             @endguest
@@ -47,6 +47,7 @@
                                 <a class="nav-link" href="{{route('contactus.website')}}">ContactUs</a>
                             </li>
 
+
                         </ul>
 
 
@@ -62,7 +63,7 @@
                                     <input type="text" class="form-control" placeholder="Search Packages..."
                                         name="search">
                                     <div class="input-group-append">
-                                        <button type="submit" class="btn btn-danger">Search</button>
+                                        <button type="submit" class="btn btn-info">Search</button>
                                     </div>
                                 </div>
                             </form>

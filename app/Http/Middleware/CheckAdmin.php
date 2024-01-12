@@ -20,7 +20,8 @@ class CheckAdmin
         {
             return $next ($request);
         }
-        notify()->error('You are not admin');
+        notify()->success('Login Succesfully');
         return redirect()->route('home');
     }
 }
+

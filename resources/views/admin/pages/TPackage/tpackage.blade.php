@@ -5,7 +5,7 @@
     <table class="table text-center align-center">
         <thead>
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">SI</th>
                 <th scope="col">Name</th>
                 <th scope="col">Code</th>
                 <th scope="col">Duration</th>
@@ -16,11 +16,12 @@
                 <th scope="col">Price</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
+                {{-- class="container"  --}}
             </tr>
         </thead>
         <tbody>
             <tr>
-                @foreach ($packages as $key => $package)
+                @foreach ($packages->reverse() as $key => $package)
                     <th scope="row">{{ $key + 1 }}</th>
                     <td>{{ $package->name }}</td>
                     <td>{{ $package->code }}</td>
@@ -43,7 +44,8 @@
         </tbody>
     </table>
 
-    <div class="w-25 mx-auto">
+
+    {{-- <div class="w-25 mx-auto">
         {{ $packages->links() }}
-    </div>
+    </div> --}}
 @endsection
